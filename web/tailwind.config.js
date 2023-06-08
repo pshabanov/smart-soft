@@ -7,7 +7,12 @@ module.exports = {
         './vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php',
     ],
     theme: {
-        extend: {},
+        extend: {
+            colors: {
+                'main-yellow': '#ffcb3d',
+                'main-red': '#d81921',
+            }
+        },
     },
     plugins: [],
 }

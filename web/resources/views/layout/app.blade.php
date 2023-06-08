@@ -8,11 +8,13 @@
     @vite('resources/css/app.css')
     <title>@yield('title')</title>
 </head>
-<body class="h-screen">
+<body class="bg-white dark:bg-slate-900 font-main">
+<div class="h-screen">
 
-@yield('content')
+    @yield('content')
 
-@vite('resources/js/app.js')
+    @vite('resources/js/app.js')
+</div>
 
 </body>
 </html>

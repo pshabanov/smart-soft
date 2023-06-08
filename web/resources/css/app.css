@@ -1,3 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+.wrapper {
+    max-width: 1366px;
+    width: 100%;
+    margin: 0 auto;
+}
+.header {
+    display: grid;
+    grid-template-columns: 200px 2fr 20px 1fr 1fr;
+    align-items: start;
+}
+
+.header__promo {
+    @apply flex space-x-10 px-10 justify-center;
+}
+.logo {
+    @apply w-full h-full flex;
+}
+.header__promo-title {
+    @apply font-semibold
+}
+
+.header__promo-subtitle {
+    @apply text-main-red;
+}
+.header__contact-title {
+    @apply font-semibold text-gray-300;
+}
+
+nav {
+    @apply bg-gradient-to-l from-main-yellow to-main-red w-full mt-10;
+}
+.head-nav {
+    @apply flex py-4;
+}
+.head-nav__link {
+    @apply font-bold text-white p-3 hover:bg-gray-200/30 rounded-es-sm transition;
+}
+.main-banner {
+    position: relative;
+    height: 100%;
+}
+.swiper {
+    width: 100%;
+    height: 500px;
+}
+
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.banner__list {
+    display: flex;
+    height: 500px;
+}
+.banner__item {
+    display: block;
+    width: 100%;
+    height: 500px;
+}
