@@ -10,6 +10,7 @@
     width: 100%;
     margin: 0 auto;
 }
+
 .header {
     display: grid;
     grid-template-columns: 200px 2fr 20px 1fr 1fr;
@@ -19,9 +20,11 @@
 .header__promo {
     @apply flex space-x-10 px-10 justify-center;
 }
+
 .logo {
     @apply w-full h-full flex;
 }
+
 .header__promo-title {
     @apply font-semibold
 }
@@ -29,6 +32,7 @@
 .header__promo-subtitle {
     @apply text-main-red;
 }
+
 .header__contact-title {
     @apply font-semibold text-gray-300;
 }
@@ -36,16 +40,20 @@
 nav {
     @apply bg-gradient-to-l from-main-yellow to-main-red w-full mt-10;
 }
+
 .head-nav {
     @apply flex py-4;
 }
+
 .head-nav__link {
     @apply font-bold text-white p-3 hover:bg-gray-200/30 rounded-es-sm transition;
 }
+
 .main-banner {
     position: relative;
     height: 100%;
 }
+
 .swiper {
     width: 100%;
     height: 500px;
@@ -66,12 +74,45 @@ nav {
     height: 100%;
     object-fit: cover;
 }
+
 .banner__list {
     display: flex;
     height: 500px;
 }
+
 .banner__item {
     display: block;
     width: 100%;
     height: 500px;
+}
+
+.footer__link {
+    @apply inline-block text-gray-500 py-2 hover:underline;
+}
+
+.case__item {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-column-gap: 30px;
+    @apply pt-8 pb-6 border-b border-gray-200;
+}
+
+.case__item:last-child {
+    @apply border-b-0
+}
+
+.case__item-title {
+    @apply font-semibold text-main-black;
+}
+
+.case__item-subtitle {
+    @apply pt-6 pb-2 font-semibold text-gray-500
+}
+
+.case__item-text {
+    @apply mb-16 text-main-grey
+}
+
+.btn {
+    @apply inline-block py-4 px-36 bg-main-yellow/80 rounded hover:bg-main-red hover:text-white transition font-semibold uppercase;
 }

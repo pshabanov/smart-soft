@@ -5,9 +5,14 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class FileEntry extends Model
+class Post extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['name', 'path'];
+    protected $fillable = [
+        'title',
+        'subtitle',
+        'description',
+        'image'
+    ];
 }

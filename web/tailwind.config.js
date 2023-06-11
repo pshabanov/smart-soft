@@ -11,6 +11,8 @@ module.exports = {
             colors: {
                 'main-yellow': '#ffcb3d',
                 'main-red': '#d81921',
+                'main-black': '#010101',
+                'main-grey': '#555555'
             }
         },
     },
