@@ -194,3 +194,48 @@ section.target::after {
 .target__btn:hover {
     @apply bg-main-yellow transition
 }
+
+
+/* MODAL */
+.popup__form {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(2px);
+    z-index: 100;
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+.popup__form.__active{
+    display: flex;
+}
+#popup__form {
+    position: relative;
+    min-width: 475px;
+    height: 300px;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px;
+    border-radius: 16px;
+    border: 1px solid #ff813d;
+}
+.popup__wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 100%;
+}
+.popup__wrapper .close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+}
