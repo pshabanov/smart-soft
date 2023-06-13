@@ -9,8 +9,8 @@
             </div>
             <div class="header__promo">
                 <div class="header__promo-block">
-                    <div class="header__promo-title">Дестрибьютор</div>
-                    <div class="header__promo-subtitle">на рынке кыргызстана</div>
+                    <div class="header__promo-title">Официльный партнер</div>
+                    <div class="header__promo-subtitle">1С в Кыргызстане</div>
                 </div>
                 <div class="header__promo-block">
                     <div class="header__promo-title">Более 15 лет</div>
@@ -33,13 +33,13 @@
     <nav>
         <div class="wrapper">
             <ul class="head-nav">
-                <li><a href="#" class="head-nav__link">Главная</a></li>
-                <li><a href="#" class="head-nav__link">Продукты</a></li>
+                <li><a href="/" class="head-nav__link">Главная</a></li>
+                <li><a href="#" class="head-nav__link">Услуги</a></li>
                 <li><a href="#" class="head-nav__link">Новости</a></li>
                 <li><a href="#" class="head-nav__link">Контакты</a></li>
                 <li><a href="#" class="head-nav__link">О компании</a></li>
                 <li><a href="#" class="head-nav__link">Сертификаты</a></li>
-                <li><a href="#" class="head-nav__link">Наши проекты</a></li>
+                <li><a href="/projects" class="head-nav__link">Наши проекты</a></li>
             </ul>
         </div>
     </nav>

@@ -54,6 +54,10 @@ nav {
     height: 100%;
 }
 
+h1{
+    @apply text-3xl font-bold
+}
+
 .swiper {
     width: 100%;
     height: 500px;
@@ -115,4 +119,78 @@ nav {
 
 .btn {
     @apply inline-block py-4 px-36 bg-main-yellow/80 rounded hover:bg-main-red hover:text-white transition font-semibold uppercase;
+}
+
+.ww-best__list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 40px;
+}
+
+.ww-best__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px 0;
+}
+.ww-best__icon svg {
+    width: 60px;
+    height: 60px;
+}
+.ww-best__item h3 {
+    @apply font-bold text-center pb-4 text-main-red
+}
+
+.ww-best__attr {
+    list-style-image: url("../../public/images/circle.svg");
+    font-size: 14px;
+    line-height: 2;
+    border-radius: 16px;
+    padding: 20px 40px;
+    border: 1px solid #eaeaea;
+}
+.ww-best__title {
+    @apply text-center pb-6 pt-2 text-main-red
+}
+section.target {
+    padding: 50px 0;
+    background-attachment: fixed;
+    background-size: cover;
+    position: relative;
+    margin-bottom: 100px;
+    background-image: url('../../public/images/footer_bg.jpg');
+}
+section.target .wrapper {
+    display: grid;
+    grid-template-columns: 1fr 350px;
+    align-items: center;
+    position: relative;
+    z-index: 20;
+}
+section.target::after {
+    background: rgba(14, 29, 36, 0.9);
+    content: "";
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    display: block;
+    width: 100%;
+    z-index: 10;
+}
+.target__title {
+    @apply text-main-yellow text-xl font-semibold pb-4
+}
+.target__subtitle {
+    @apply text-white
+}
+.target__btn {
+    background-color: #fff;
+    width: fit-content;
+    border-radius: 4px;
+    padding: 8px 40px;
+    cursor: pointer;
+}
+.target__btn:hover {
+    @apply bg-main-yellow transition
 }

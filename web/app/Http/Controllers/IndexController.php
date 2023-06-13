@@ -11,4 +11,8 @@ class IndexController extends Controller
         return view('home');
     }
 
+    public function projects(){
+        return view('projects');
+    }
+
 }

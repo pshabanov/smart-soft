@@ -9,6 +9,7 @@
     "preview": "vite preview",
     "build-only-staging": "vite build --mode staging",
     "build-only-production": "vite build --mode production",
+    "build": "vite build",
     "type-check": "vue-tsc --noEmit"
   },
   "dependencies": {

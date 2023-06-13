@@ -30,7 +30,6 @@ const login = async (e: SubmitEvent) => {
   <div class="login">
     <div class="login-block">
       <div class="login-header">
-        <Logo/>
         Авторизация
       </div>
       <v-form @submit="login">

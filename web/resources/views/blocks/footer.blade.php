@@ -4,7 +4,7 @@
             <section>
                 <div class="md:flex md:gap-10">
                     <div class="w-full mb-5 sm:w-2/5">
-                        <h6 class="font-semibold text-gray-700 mb-3">Компания</h6>
+                        <h6 class="font-semibold text-main-red mb-3">Компания</h6>
                         <ul>
                             <li><a class="footer__link" href="#">Команда</a></li>
                             <li><a class="footer__link" href="#">Новости</a></li>
@@ -14,7 +14,7 @@
                     </div>
 
                     <div class="w-full mb-5 sm:w-2/5">
-                        <h6 class="font-semibold text-gray-700 mb-3">Контент</h6>
+                        <h6 class="font-semibold text-main-red mb-3">Контент</h6>
                         <ul>
                             <li><a class="footer__link decoration-gray-700 underline-offset-2" href="#">Продукты</a></li>
                             <li><a class="footer__link decoration-gray-700 underline-offset-2" href="#">Акции</a></li>
@@ -23,7 +23,7 @@
                     </div>
 
                     <div class="w-full sm:w-1/5">
-                        <h6 class="font-semibold text-gray-700 mb-3">Социальные сети</h6>
+                        <h6 class="font-semibold text-main-red mb-3">Социальные сети</h6>
                         <ul class="flex gap-3">
                             <li>
                                 <a class="footer__link decoration-gray-700 underline-offset-2" href="#">
