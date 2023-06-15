@@ -12,7 +12,8 @@ module.exports = {
                 'main-yellow': '#ffcb3d',
                 'main-red': '#d81921',
                 'main-black': '#010101',
-                'main-grey': '#555555'
+                'main-grey': '#555555',
+                'main-orange': '#ff813d'
             }
         },
     },

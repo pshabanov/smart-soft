@@ -1,5 +1,5 @@
 @extends('layout.app')
-@section('title', 'Главная страница')
+@section('title', 'Решения')
 @section('content')
 
     @include('blocks.header')

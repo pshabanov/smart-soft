@@ -57,7 +57,9 @@ nav {
 h1{
     @apply text-3xl font-bold
 }
-
+h2 {
+    @apply text-3xl font-bold pb-5
+}
 .swiper {
     width: 100%;
     height: 500px;
@@ -238,4 +240,65 @@ section.target::after {
     width: 16px;
     height: 16px;
     cursor: pointer;
+}
+
+section.news-on-main {
+    @apply py-10
+}
+
+.news-on-main__list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 40px;
+}
+.news-on-main__item {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: space-between;
+}
+.news-on-main__title {
+    @apply font-bold pt-4 pb-2
+}
+.news-on-main__more {
+    @apply py-2 px-6 border-main-orange border-2 rounded-lg inline-block mt-4 items-end bg-main-yellow text-main-red w-fit;
+    @apply hover:bg-main-red hover:text-white hover:border-transparent transition;
+}
+
+.reviews__list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-column-gap: 30px;
+}
+
+.reviews__item {
+    background-color: #fff;
+    border-radius: 16px;
+    padding: 40px 30px;
+    border: 1px solid #f0f0f0;
+    height: fit-content;
+}
+
+.reviews__item-text {
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 19px;
+}
+
+.reviews__item-img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.reviews__item-img img {
+    width: 70%;
+    padding-bottom: 30px;
+}
+.reviews__item-author {
+    margin-top: 20px;
+}
+
+.reviews__item-author__company,
+.reviews__item-author__name {
+    @apply font-semibold
 }

@@ -2,7 +2,7 @@
     <div class="wrapper">
         <div class="header">
             <div class="logo">
-                <a class="flex flex-col" href="#">
+                <a class="flex flex-col" href="{{ route('home') }}">
                     <div class="text-4xl font-bold">Smart</div>
                     <div>Soft Company</div>
                 </a>
@@ -33,13 +33,13 @@
     <nav>
         <div class="wrapper">
             <ul class="head-nav">
-                <li><a href="/" class="head-nav__link">Главная</a></li>
+                <li><a href="{{ route('home')  }}" class="head-nav__link">Главная</a></li>
                 <li><a href="#" class="head-nav__link">Услуги</a></li>
-                <li><a href="#" class="head-nav__link">Новости</a></li>
+                <li><a href="{{ route('news_list') }}" class="head-nav__link">Новости</a></li>
                 <li><a href="#" class="head-nav__link">Контакты</a></li>
                 <li><a href="#" class="head-nav__link">О компании</a></li>
                 <li><a href="#" class="head-nav__link">Сертификаты</a></li>
-                <li><a href="/projects" class="head-nav__link">Наши проекты</a></li>
+                <li><a href="{{ route('projects_list') }}" class="head-nav__link">Наши проекты</a></li>
             </ul>
         </div>
     </nav>

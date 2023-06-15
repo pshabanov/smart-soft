@@ -2,17 +2,18 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Mail;
+use App\Models\News;
+use App\Models\Review;
 
 class IndexController extends Controller
 {
-    public function index(){
-        return view('home');
+    public function index()
+    {
+        $news = News::query()->orderBy("created_at", 'desc')->limit(3)->get();
+        $reviews = Review::query()->orderBy("created_at", 'desc')->limit(3)->get();
+        return view('home', [
+            'news' => $news,
+            'reviews' => $reviews
+        ]);
     }
-
-    public function projects(){
-        return view('projects');
-    }
-
 }

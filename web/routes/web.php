@@ -14,4 +14,12 @@ use Illuminate\Support\Facades\Route;
 */
 Route::get('/', [\App\Http\Controllers\IndexController::class, 'index'])->name('home');
 
-Route::get('/projects', [\App\Http\Controllers\IndexController::class, 'projects'])->name('projects');
+Route::prefix('news')->group(function (){
+    Route::get('/', [\App\Http\Controllers\NewsController::class, 'index'])->name('news_list');
+    Route::get('/{id}', [\App\Http\Controllers\NewsController::class, 'detail'])->name('detail_news');
+});
+
+Route::prefix('projects')->group(function (){
+    Route::get('/', [\App\Http\Controllers\ProjectsController::class, 'index'])->name('projects_list');
+    Route::get('/{id}', [\App\Http\Controllers\ProjectsController::class, 'detail'])->name('detail_project');
+});
