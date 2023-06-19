@@ -15,7 +15,7 @@ class NewsController extends Controller
     }
 
     public function detail($id){
-        $news = News::query()->where('id', $id)->get();
+        $news = News::query()->findOrFail($id);
         return view('pages.news.detail_news',[
             'news'=>$news
         ]);

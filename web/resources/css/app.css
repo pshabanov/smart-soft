@@ -248,6 +248,11 @@ section.news-on-main {
 
 .news-on-main__list {
     display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 40px;
+}
+.news__list {
+    display: grid;
     grid-template-columns: 1fr;
     grid-row-gap: 40px;
 }
@@ -304,4 +309,8 @@ section.news-on-main {
 .reviews__item-author__company,
 .reviews__item-author__name {
     @apply font-semibold
+}
+
+.news-on-main__header {
+    @apply hover:text-main-red transition
 }

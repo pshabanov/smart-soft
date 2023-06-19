@@ -8,8 +8,8 @@
         <div class="wrapper">
             <section class="case">
                 <h1 class="pb-10">Новости</h1>
-                <div class="news-on-main__list">
-                    @each('blocks.news.item', $news, 'news')
+                <div class="news__list">
+                    @each('pages.news.partials.item', $news, 'news')
                 </div>
                 {{ $news->links() }}
             </section>

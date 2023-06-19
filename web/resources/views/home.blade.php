@@ -196,9 +196,11 @@
         </section>
         <section class="news-on-main">
             <div class="wrapper">
-                <h2 class="news-on-main__header">Последние новости</h2>
+                <h2 class="news-on-main__header">
+                    <a href="{{route('news_list')}}">Последние новости</a>
+                </h2>
                 <div class="news-on-main__list">
-                    @each('blocks.news.item_on_main_page', $news, 'news')
+                    @each('pages.news.partials.item_on_main_page', $news, 'news')
                 </div>
             </div>
         </section>
