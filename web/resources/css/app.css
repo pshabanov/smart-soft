@@ -336,3 +336,81 @@ section.news-on-main {
 .case ul {
    @apply list-disc pl-5
 }
+
+.services__item {
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    @apply border-b border-gray-200
+}
+.services__item:last-child {
+    @apply border-b-0
+}
+.services__item-img {
+    padding: 40px;
+    width: 80%;
+}
+.services__item-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    @apply py-6
+}
+.services__item-title {
+    @apply font-bold pb-4
+}
+.services__item-info .services__item-link {
+    @apply pt-4
+}
+.services h1 {
+    @apply pb-16
+}
+.services__products {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-column-gap: 100px;
+    padding: 40px 0;
+}
+.services__image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.services__image img{
+    max-width: 150px;
+    max-height: 150px;
+}
+.services__variants {
+    display: flex;
+    flex-direction: column;
+}
+.services__variants-item:first-child {
+    @apply border-t border-gray-200
+}
+.services__variants-item {
+    display: grid;
+    grid-template-columns: 1fr 150px auto;
+    align-items: center;
+    @apply border-b border-gray-200 py-4 px-2 hover:bg-gray-100 transition
+}
+.services__variants-price {
+    @apply font-semibold text-main-red
+}
+.services__variants-btn {
+    @apply bg-main-yellow hover:bg-main-red hover:text-white transition py-2 px-6 rounded-lg cursor-pointer;
+}
+.services__tabs {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 20px;
+}
+.services__tab {
+    cursor: pointer;
+    @apply hover:bg-main-yellow/40 py-2 px-8 transition rounded
+}
+.services__tab.__active {
+    @apply bg-main-yellow/80 text-main-red
+}
+.services__tab-content img {
+    width: 40px;
+}

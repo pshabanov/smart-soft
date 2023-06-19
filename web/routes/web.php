@@ -23,3 +23,7 @@ Route::prefix('projects')->group(function (){
     Route::get('/', [\App\Http\Controllers\ProjectsController::class, 'index'])->name('projects_list');
     Route::get('/{id}', [\App\Http\Controllers\ProjectsController::class, 'detail'])->name('detail_project');
 });
+Route::prefix('services')->group(function (){
+    Route::get('/', [\App\Http\Controllers\ServicesController::class, 'index'])->name('services_list');
+    Route::get('/{id}', [\App\Http\Controllers\ServicesController::class, 'detail'])->name('detail_services');
+});
