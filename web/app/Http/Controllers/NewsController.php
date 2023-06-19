@@ -2,15 +2,22 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\News;
 use Illuminate\Http\Request;
 
 class NewsController extends Controller
 {
     public function index(){
-        return view('news');
+        $news = News::query()->orderBy("created_at", 'desc')->simplePaginate(3);
+        return view('pages.news.index',[
+            'news' => $news
+        ]);
     }
 
-    public function detail(){
-        return view('detail_news');
+    public function detail($id){
+        $news = News::query()->where('id', $id)->get();
+        return view('pages.news.detail_news',[
+            'news'=>$news
+        ]);
     }
 }

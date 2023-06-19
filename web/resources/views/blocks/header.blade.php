@@ -30,7 +30,7 @@
             </div>
         </div>
     </div>
-    <nav>
+    <nav class="nav">
         <div class="wrapper">
             <ul class="head-nav">
                 <li><a href="{{ route('home')  }}" class="head-nav__link">Главная</a></li>

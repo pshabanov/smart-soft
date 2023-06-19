@@ -198,20 +198,7 @@
             <div class="wrapper">
                 <h2 class="news-on-main__header">Последние новости</h2>
                 <div class="news-on-main__list">
-                    @foreach($news as $news_item)
-                        <div class="news-on-main__item">
-                            <div class="news-on-main__info">
-                                <a href="#">
-                                    <img
-                                        src="{{$news_item->image ? $news_item->image : 'https://t4.ftcdn.net/jpg/04/73/25/49/360_F_473254957_bxG9yf4ly7OBO5I0O5KABlN930GwaMQz.jpg'}}"
-                                        alt="">
-                                </a>
-                                <p class="news-on-main__title">{{$news_item->title}}</p>
-                                <p class="news-on-main__detail">{{$news_item->description}}</p>
-                            </div>
-                            <a href="#" class="news-on-main__more">Подробнее</a>
-                        </div>
-                    @endforeach
+                    @each('blocks.news.item_on_main_page', $news, 'news')
                 </div>
             </div>
         </section>
