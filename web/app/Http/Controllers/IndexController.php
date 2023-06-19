@@ -16,4 +16,8 @@ class IndexController extends Controller
             'reviews' => $reviews
         ]);
     }
+
+    public function certificates(){
+        return view('pages.certificates');
+    }
 }

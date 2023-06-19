@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 Route::get('/', [\App\Http\Controllers\IndexController::class, 'index'])->name('home');
+Route::get('/certificates', [\App\Http\Controllers\IndexController::class, 'certificates'])->name('certificates');
 
 Route::prefix('news')->group(function (){
     Route::get('/', [\App\Http\Controllers\NewsController::class, 'index'])->name('news_list');

@@ -253,7 +253,8 @@ section.news-on-main {
 }
 .news__list {
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 60px;
     grid-row-gap: 40px;
 }
 .news-on-main__item,
@@ -413,4 +414,14 @@ section.news-on-main {
 }
 .services__tab-content img {
     width: 40px;
+}
+.certificates__list {
+    padding: 60px 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-column-gap: 60px;
+    grid-row-gap: 40px;
+}
+.certificates__list img {
+    cursor: pointer;
 }
