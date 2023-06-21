@@ -14,15 +14,16 @@ const form = ref({
   password: '',
 })
 
-if (useUserStore().checkIsAuth()) {
+if (useUserStore().isAuth) {
   router.push(PAGES.HOME)
 }
 
 const login = async (e: SubmitEvent) => {
-  e.preventDefault()
-  await UserService().login(form.value).then((response) => {
-    auth.putUserInfoInLS(response, response.token)
-  })
+  useUserStore().isAuth=true
+  // e.preventDefault()
+  // await UserService().login(form.value).then((response) => {
+  //   auth.putUserInfoInLS(response, response.token)
+  // })
 }
 </script>
 

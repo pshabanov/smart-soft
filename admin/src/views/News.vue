@@ -3,5 +3,5 @@
 </script>
 
 <template>
-  <p>Подписки</p>
+  <p>Новости</p>
 </template>

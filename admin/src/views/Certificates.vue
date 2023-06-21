@@ -3,5 +3,5 @@
 </script>
 
 <template>
-  <p>Подарки и ключи</p>
+  <p>Сертификаты</p>
 </template>

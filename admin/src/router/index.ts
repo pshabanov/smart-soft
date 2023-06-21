@@ -3,10 +3,13 @@ import HomePage from '@/views/HomePage.vue'
 import { PAGES } from '@/model'
 import NotFoundPage from '@/views/NotFoundPage.vue'
 import LoginPage from '@/views/LoginPage.vue'
-import UsersPage from '@/views/usersPage/UsersPage.vue'
-import { CatalogRouting } from '@/router/menus/catalog.menu'
-import { ProductsRouting } from '@/router/menus/product.menu'
-import { SettingsRouting } from '@/router/menus/settings.menu'
+import Banners from '@/views/Banners.vue'
+import Solutions from '@/views/Solutions.vue'
+import Services from '@/views/Services.vue'
+import News from '@/views/News.vue'
+import Reviews from '@/views/Reviews.vue'
+import Certificates from '@/views/Certificates.vue'
+
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -21,14 +24,36 @@ const router = createRouter({
       name: 'home',
       component: HomePage
     },
-      ...CatalogRouting,
-      ...ProductsRouting,
     {
-      path: PAGES.USERS,
-      name: 'users',
-      component: UsersPage,
+      path: PAGES.BANNERS,
+      name: 'banners',
+      component: Banners,
     },
-      ...SettingsRouting,
+    {
+      path: PAGES.SOLUTIONS,
+      name: 'solutions',
+      component: Solutions,
+    },
+    {
+      path: PAGES.SERVICES,
+      name: 'services',
+      component: Services,
+    },
+    {
+      path: PAGES.NEWS,
+      name: 'news',
+      component: News,
+    },
+    {
+      path: PAGES.REVIEWS,
+      name: 'reviews',
+      component: Reviews,
+    },
+    {
+      path: PAGES.CERTIFICATES,
+      name: 'certificates',
+      component: Certificates,
+    },
     {
       path: PAGES.NOT_FOUND_404,
       name: 'PAGE_NOT_FOUND',

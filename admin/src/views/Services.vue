@@ -3,5 +3,5 @@
 </script>
 
 <template>
-  <p>Языки</p>
+  <p>Услуги</p>
 </template>

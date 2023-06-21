@@ -13,7 +13,7 @@ const auth = new authenticate()
 const menuActive = ref<boolean>(true)
 const user = ref<UserType['userinfo']>(useUserStore().userinfo)
 auth.getUserInfoFromLS()
-if (!useUserStore().checkIsAuth()) router.push(PAGES.LOGIN)
+if (!useUserStore().isAuth) router.push(PAGES.LOGIN)
 
 const userLogout = () => {
   auth.logout()
@@ -29,7 +29,7 @@ onMounted(() => {
   <v-card>
     <v-layout>
       <v-navigation-drawer
-          v-if="useUserStore().checkIsAuth()"
+          v-if="useUserStore().isAuth"
           v-model="menuActive">
         <div class="menu">
           <div class="menu-logo">
@@ -41,7 +41,7 @@ onMounted(() => {
         </div>
       </v-navigation-drawer>
 
-      <v-app-bar v-if="useUserStore().checkIsAuth()">
+      <v-app-bar v-if="useUserStore().isAuth">
         <v-app-bar-nav-icon icon="mdi-menu" @click="menuActive = !menuActive"></v-app-bar-nav-icon>
         <v-toolbar-title>
          WEB<b>DEVS</b>

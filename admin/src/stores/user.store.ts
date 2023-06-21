@@ -36,9 +36,6 @@ export const useUserStore = defineStore('users', () => {
         isAuth.value = value
     }
 
-    function checkIsAuth() {
-        return isAuth.value
-    }
 
     function setUserInfoAndToken(data: UserInfoType, access_token: string) {
         userinfo.value = data
@@ -54,7 +51,7 @@ export const useUserStore = defineStore('users', () => {
     }
 
     return {
-        isAuth, userinfo, token, setAuth, setUserInfoAndToken, logout, checkIsAuth, getToken,
+        isAuth, userinfo, token, setAuth, setUserInfoAndToken, logout, getToken,
     }
 })
 

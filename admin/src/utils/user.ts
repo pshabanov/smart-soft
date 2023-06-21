@@ -26,14 +26,14 @@ export class authenticate {
     }
 
     async getUserInfoFromLS() {
-        if (!localStorage.getItem('USER_DATA')) {
-            useUserStore().setAuth(false)
-            await router.push(PAGES.LOGIN)
-        } else {
-            const obj: any = JSON.parse(localStorage.getItem('USER_DATA') || '')
-            useUserStore().setAuth(true)
-            useUserStore().setUserInfoAndToken(obj.userinfo, obj.token)
-        }
+        // if (!localStorage.getItem('USER_DATA')) {
+        //     useUserStore().setAuth(false)
+        //     await router.push(PAGES.LOGIN)
+        // } else {
+        //     const obj: any = JSON.parse(localStorage.getItem('USER_DATA') || '')
+        //     useUserStore().setAuth(true)
+        //     useUserStore().setUserInfoAndToken(obj.userinfo, obj.token)
+        // }
     }
 
     async logout() {

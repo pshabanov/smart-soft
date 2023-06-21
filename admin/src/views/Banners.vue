@@ -3,5 +3,5 @@
 </script>
 
 <template>
-  <p>Продукты</p>
+  <p>Баннера</p>
 </template>

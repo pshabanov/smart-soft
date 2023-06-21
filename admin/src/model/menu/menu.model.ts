@@ -10,117 +10,39 @@ export const MENU: Readonly<MenuElement[]> = Object.freeze([
         child: [],
     },
     {
-        label: 'Каталог',
-        icon: 'mdi-view-list',
-        child: [
-            {
-                label: 'Категории',
-                icon: 'mdi-animation',
-                path: PAGES.CATEGORY,
-                child: []
-            },
-            {
-                label: 'Товары',
-                icon: 'mdi-cart-variant',
-                path: PAGES.PRODUCTS,
-                child: []
-            },
-            {
-                label: 'Фильтры',
-                icon: 'mdi-tune-variant',
-                path: PAGES.FILTERS,
-                child: []
-            },
-            {
-                label: 'Характеристики',
-                icon: 'mdi-expand-all-outline',
-                path: PAGES.ATTRIBUTES,
-                child: []
-            },
-            {
-                label: 'Опции',
-                icon: 'mdi-folder-wrench-outline',
-                path: PAGES.OPTIONS,
-                child: []
-            },
-            {
-                label: 'Бренды',
-                icon: 'mdi-domain',
-                path: PAGES.BRANDS,
-                child: []
-            },
-            {
-                label: 'Файлы',
-                icon: 'mdi-file-document-multiple-outline',
-                path: PAGES.FILES,
-                child: []
-            },
-            {
-                label: '?Обзоры',
-                icon: 'mdi-youtube',
-                path: PAGES.REVIEWS,
-                child: []
-            },
-            {
-                label: '?Шаблоны',
-                icon: 'mdi-view-dashboard',
-                path: PAGES.TEMPLATES,
-                child: []
-            },
-        ],
-    },
-    {
-        label: 'Продажи',
-        icon: 'mdi-percent-box',
-        child: [
-            {
-                label: 'Заказы',
-                icon: 'mdi-abacus',
-                path: PAGES.ORDERS,
-                child: [],
-            },
-            {
-                label: 'Подписки',
-                icon: 'mdi-email-multiple',
-                path: PAGES.SUBSCRIBERS,
-                child: [],
-            },
-            {
-                label: 'Возвраты',
-                icon: 'mdi-backspace-outline',
-                path: PAGES.RETURNS,
-                child: [],
-            },
-            {
-                label: 'Коды и подсказки',
-                icon: 'mdi-gift-open-outline',
-                path: PAGES.GIFTS,
-                child: [],
-            },
-        ],
-    },
-    {
-        label: 'Пользователи',
-        icon: 'mdi-account',
-        path: PAGES.USERS,
+        label: 'Баннеры',
+        icon: 'mdi-image-area',
+        path: PAGES.BANNERS,
         child: [],
     },
     {
-        label: 'Настройки',
-        icon: 'mdi-cog',
-        child: [
-            {
-                label: 'Настройки',
-                icon: 'mdi-cog',
-                path: PAGES.SETTINGS,
-                child: [],
-            },
-            {
-                label: 'Языки',
-                icon: 'mdi-translate-variant',
-                path: PAGES.LANGUAGES,
-                child: [],
-            },
-        ],
+        label: 'Решения',
+        icon: 'mdi-briefcase-arrow-left-right-outline',
+        path: PAGES.SOLUTIONS,
+        child: [],
+    },
+    {
+        label: 'Услуги',
+        icon: 'mdi-percent-outline',
+        path: PAGES.SERVICES,
+        child: [],
+    },
+    {
+        label: 'Новости',
+        icon: 'mdi-newspaper-variant-outline',
+        path: PAGES.NEWS,
+        child: [],
+    },
+    {
+        label: 'Отзывы',
+        icon: 'mdi-message-draw',
+        path: PAGES.REVIEWS,
+        child: [],
+    },
+    {
+        label: 'Сертификаты',
+        icon: 'mdi-certificate-outline',
+        path: PAGES.CERTIFICATES,
+        child: [],
     },
 ])

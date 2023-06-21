@@ -3,5 +3,5 @@
 </script>
 
 <template>
-  <p>Харастиристики</p>
+  <p>Решения</p>
 </template>
