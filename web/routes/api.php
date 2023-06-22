@@ -3,6 +3,7 @@
 use App\Http\Controllers\Api\UserController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use \App\Http\Controllers\Api\NewsResourceController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,3 +22,7 @@ Route::group(['middleware' => ['check.token']], function () {
     Route::get('users/read', [UserController::class, 'read']);
 });
 
+
+Route::apiResources([
+    'news' => NewsResourceController::class
+]);
