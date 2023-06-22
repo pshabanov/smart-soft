@@ -3,7 +3,7 @@ import { defineStore } from 'pinia'
 import type { UserInfoType } from '@/entities/user/user.model'
 
 export const useUserStore = defineStore('users', () => {
-    const isAuth = ref(true)
+    const isAuth = ref(false)
 
     const userinfo = ref<UserInfoType>({
         user: {

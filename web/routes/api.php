@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::post('login', [UserController::class, 'login']);
+Route::post('login', [UserController::class, 'login'])->name('login');
 
 Route::group(['middleware' => ['check.token']], function () {
     Route::get('users/read', [UserController::class, 'read']);

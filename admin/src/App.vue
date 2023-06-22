@@ -44,7 +44,6 @@ onMounted(() => {
       <v-app-bar v-if="useUserStore().isAuth">
         <v-app-bar-nav-icon icon="mdi-menu" @click="menuActive = !menuActive"></v-app-bar-nav-icon>
         <v-toolbar-title>
-         WEB<b>DEVS</b>
         </v-toolbar-title>
         <v-btn @click="userLogout">Выйти</v-btn>
       </v-app-bar>

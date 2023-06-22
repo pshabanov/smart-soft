@@ -20,10 +20,10 @@ if (useUserStore().isAuth) {
 
 const login = async (e: SubmitEvent) => {
   useUserStore().isAuth=true
-  // e.preventDefault()
-  // await UserService().login(form.value).then((response) => {
-  //   auth.putUserInfoInLS(response, response.token)
-  // })
+  e.preventDefault()
+  await UserService().login(form.value).then((response) => {
+    auth.putUserInfoInLS(response, response.token)
+  })
 }
 </script>
 

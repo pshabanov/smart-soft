@@ -15,7 +15,7 @@ return [
     |
     */
 
-    'default' => env('DB_CONNECTION', 'ostore'),
+    'default' => env('DB_CONNECTION', 'ssc'),
 
     /*
     |--------------------------------------------------------------------------

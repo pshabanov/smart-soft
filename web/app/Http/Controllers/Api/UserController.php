@@ -4,10 +4,8 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Api\LoginRequest;
-use App\Models\Admin;
-use App\Models\Role;
+use App\Models\AdminUser;
 use App\Models\User;
-use App\Providers\Api\KeyCloakProvider;
 use App\Providers\Api\ResponseProvider;
 use Illuminate\Http\Request;
 
@@ -15,15 +13,14 @@ class UserController extends Controller
 {
     public function login(LoginRequest $request)
     {
-        $keyCloakProvider = new KeyCloakProvider();
         $responseProvider = new ResponseProvider();
 
 
-        $user = User::where('username', $request['username'])->first();
+        $user = AdminUser::where('username', $request['username'])->first();
         if (is_null($user)) {
             return $responseProvider->FAIL($user, 'Аккаунт не найдет!', 403);
         }
-        $admin = Admin::where('user_id', $user->id)->first();
+        $admin = AdminUser::where('user_id', $user->id)->first();
 
         if (is_null($admin)) {
             return $responseProvider->FAIL($admin, 'У вас нет доступа!', 403);
