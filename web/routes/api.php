@@ -1,10 +1,9 @@
 <?php
 
-use App\Http\Controllers\Api\UserController;
+use App\Http\Controllers\Api\NewsResourceController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use \App\Http\Controllers\Api\NewsResourceController;
-
+use \App\Http\Controllers\Api\GetController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -16,12 +15,14 @@ use \App\Http\Controllers\Api\NewsResourceController;
 |
 */
 
-Route::post('login', [UserController::class, 'login'])->name('login');
-
-Route::group(['middleware' => ['check.token']], function () {
-    Route::get('users/read', [UserController::class, 'read']);
+Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
+    return $request->user();
 });
 
+Route::group(['middleware'=>'auth:sanctum'], function (){
+    //Route::get('/get', GetController::class);
+});
+Route::get('/get', GetController::class);
 
 Route::apiResources([
     'news' => NewsResourceController::class
