@@ -7,20 +7,20 @@ import { onMounted, ref } from 'vue'
 import { MENU, PAGES } from '@/model'
 import Logo from '@/components/Logo.vue'
 import MenuList from '@/components/ui/MenuList.vue'
-import type { UserType } from '@/entities/user/user.model'
-
+import type {UserInfoType, UserType} from '@/entities/user/user.model'
 const auth = new authenticate()
+
 const menuActive = ref<boolean>(true)
-const user = ref<UserType['userinfo']>(useUserStore().userinfo)
-auth.getUserInfoFromLS()
-if (!useUserStore().isAuth) router.push(PAGES.LOGIN)
+const user = ref<UserInfoType>(useUserStore().userinfo)
 
 const userLogout = () => {
   auth.logout()
 }
 
-onMounted(() => {
+onMounted(async () => {
+  await auth.getUserInfoFromLS()
   user.value = useUserStore().userinfo
+  if (!useUserStore().isAuth) await router.push(PAGES.LOGIN)
 })
 
 </script>

@@ -27,10 +27,13 @@ Route::group(['middleware' => 'api', 'prefix' => 'auth'], function ($router) {
     Route::post('me', [AuthController::class, 'me']);
 });
 
+Route::group(['middleware'=>'auth:api'], function (){
+    Route::get('/get', GetController::class);
+});
+
 Route::group(['middleware'=>'auth:sanctum'], function (){
     //Route::get('/get', GetController::class);
 });
-
 
 Route::apiResources([
     'news' => NewsResourceController::class

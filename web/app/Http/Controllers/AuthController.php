@@ -13,7 +13,7 @@ class AuthController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth:api', ['except' => ['login']]);
+        $this->middleware('auth:api', ['except' => ['login', 'refresh']]);
     }
 
     /**
@@ -39,7 +39,13 @@ class AuthController extends Controller
      */
     public function me()
     {
-        return response()->json(auth()->user());
+        $result = response()->json(auth()->user());
+        if ($result !== null)
+        {
+            return $result;
+        }else {
+            return null;
+        }
     }
 
     /**

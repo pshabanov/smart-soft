@@ -2,10 +2,11 @@ import { useUserStore } from '@/stores/user.store'
 import router from '@/router'
 import { PAGES } from '@/model'
 import type { UserInfoType } from '@/entities/user/user.model'
+import {UserService} from "@/services";
 
 
 export function token() {
-    let token = useUserStore().getToken()
+    let token = useUserStore().token
 
     if (!token) useUserStore().logout()
     else return token
@@ -19,21 +20,22 @@ export class authenticate {
         }
 
         if (obj.userinfo) localStorage.setItem('USER_DATA', JSON.stringify(obj))
-        useUserStore().setAuth(true)
+        useUserStore().isAuth = true
         useUserStore().setUserInfoAndToken(obj.userinfo, obj.token)
 
         if (is_redirect) await router.push(PAGES.HOME)
     }
 
     async getUserInfoFromLS() {
-        // if (!localStorage.getItem('USER_DATA')) {
-        //     useUserStore().setAuth(false)
-        //     await router.push(PAGES.LOGIN)
-        // } else {
-        //     const obj: any = JSON.parse(localStorage.getItem('USER_DATA') || '')
-        //     useUserStore().setAuth(true)
-        //     useUserStore().setUserInfoAndToken(obj.userinfo, obj.token)
-        // }
+        if (!localStorage.getItem('token')) {
+            await router.push(PAGES.LOGIN)
+        } else {
+            useUserStore().token = localStorage.getItem('token') || ''
+            const result:any  = await UserService().checkToken()
+            if (result?.id){
+                useUserStore().isAuth = true
+            }
+        }
     }
 
     async logout() {

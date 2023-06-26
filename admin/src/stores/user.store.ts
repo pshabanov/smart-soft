@@ -1,4 +1,4 @@
-import { ref } from 'vue'
+import {reactive, ref, watch} from 'vue'
 import { defineStore } from 'pinia'
 import type { UserInfoType } from '@/entities/user/user.model'
 
@@ -28,15 +28,6 @@ export const useUserStore = defineStore('users', () => {
 
     const token = ref<string>('')
 
-    function getToken() {
-        return token.value
-    }
-
-    function setAuth(value: boolean) {
-        isAuth.value = value
-    }
-
-
     function setUserInfoAndToken(data: UserInfoType, access_token: string) {
         userinfo.value = data
         token.value = access_token
@@ -50,8 +41,12 @@ export const useUserStore = defineStore('users', () => {
         token.value = ''
     }
 
+    watch(token, ()=>{
+        localStorage.setItem('token', token.value);
+    })
+
     return {
-        isAuth, userinfo, token, setAuth, setUserInfoAndToken, logout, getToken,
+        isAuth, userinfo, token, setUserInfoAndToken, logout
     }
 })
 

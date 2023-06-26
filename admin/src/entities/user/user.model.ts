@@ -5,6 +5,12 @@ export interface UserInfoType {
     role: RoleType
 }
 
+export interface tokenType {
+    access_token: string,
+    token_type: "bearer",
+    expires_in: number
+}
+
 export interface UserType {
     id: number | null
     username: string

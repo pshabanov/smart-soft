@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { ref } from 'vue'
+import {onMounted, ref} from 'vue'
 import { UserService } from '@/services'
 import { authenticate } from '@/utils'
 import { useUserStore } from '@/stores'
@@ -10,20 +10,16 @@ import Logo from '@/components/Logo.vue'
 const auth = new authenticate()
 
 const form = ref({
-  username: '',
-  password: '',
+  email: 'fantasydarth@gmail.com',
+  password: '123',
 })
-
-if (useUserStore().isAuth) {
-  router.push(PAGES.HOME)
-}
 
 const login = async (e: SubmitEvent) => {
   e.preventDefault()
-  await UserService().login(form.value).then((response) => {
-    auth.putUserInfoInLS(response, response.token)
-    useUserStore().isAuth=true
-  })
+  const response = await UserService().login(form.value)
+  useUserStore().isAuth = true
+  useUserStore().token = response.access_token
+  router.push(PAGES.HOME)
 }
 </script>
 
@@ -35,9 +31,9 @@ const login = async (e: SubmitEvent) => {
       </div>
       <v-form @submit="login">
         <v-text-field
-            v-model="form.username"
-            label="Логин"
-            placeholder="Введите ваш логин"
+            v-model="form.email"
+            label="Email"
+            placeholder="Введите ваш email"
             type="text"
             variant="underlined"
         ></v-text-field>
