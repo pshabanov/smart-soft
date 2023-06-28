@@ -1,4 +1,4 @@
-export const PAGES = Object.freeze({
+export const PAGES = {
     LOGIN: '/login',
     HOME: '/',
     BANNERS: '/banners',
@@ -11,8 +11,9 @@ export const PAGES = Object.freeze({
     SOLUTIONS_CREATE: '/solution',
     SOLUTIONS_DETAIL: '/solution/:id',
     NEWS: '/news',
-    NEWS_CREATE: '/news_item',
-    NEWS_DETAIL: '/news_item/:id',
+    NEWS_CREATE: '/news/create',
+    NEWS_DETAIL: '/news/update',
+    NEWS_UPDATE: '/news/update/:id',
     REVIEWS: '/reviews',
     REVIEWS_CREATE: '/review',
     REVIEWS_DETAIL: '/review/:id',
@@ -20,4 +21,4 @@ export const PAGES = Object.freeze({
     CERTIFICATES_CREATE: '/certificate',
     CERTIFICATES_DETAIL: '/certificate/:id',
     NOT_FOUND_404: '/:pathMatch(.*)*',
-})
+}

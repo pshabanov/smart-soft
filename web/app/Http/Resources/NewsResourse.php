@@ -19,6 +19,7 @@ class NewsResourse extends JsonResource
             'title'=>$this->title,
             'description'=> $this->description,
             'image' => $this->image,
+            'active' => boolval($this->active),
             'created_at'=> $this->created_at
         ];
     }
