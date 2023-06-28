@@ -23,9 +23,8 @@ class NewsResourceController extends Controller
      */
     public function store(NewsStoreRequest $request)
     {
-        $created_desk = News::create($request->validated());
-
-        return new NewsResourse($created_desk);
+        //todo загрузка изображения
+        return News::create($request->validated());
     }
 
     /**

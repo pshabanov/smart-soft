@@ -24,7 +24,15 @@ class NewsStoreRequest extends FormRequest
         return [
             'title'=>'required:max255',
             'description'=>'required',
-            'image'=>'required'
+            'image'=>'required',
+            'active'=>'required'
         ];
+    }
+
+    protected function prepareForValidation()
+    {
+        $this->merge([
+            'active' => $this->request->get('active') === true ? 1 : 0,
+        ]);
     }
 }

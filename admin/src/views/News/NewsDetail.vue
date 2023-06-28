@@ -94,11 +94,12 @@ const create = async ()=> {
           <v-img :src="news.image"/>
         </v-col>
         <v-col>
-          <v-file-input
-              label="Выберите изображение"
+          <v-text-field
+              label="Название"
+              v-model="news.image"
+              clearable
               variant="solo-filled"
-              v-model="selectedImage"
-          ></v-file-input>
+          ></v-text-field>
         </v-col>
         <v-col>
           <v-switch
