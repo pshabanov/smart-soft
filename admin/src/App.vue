@@ -7,7 +7,7 @@ import { onMounted, ref } from 'vue'
 import { MENU, PAGES } from '@/model'
 import Logo from '@/components/Logo.vue'
 import MenuList from '@/components/ui/MenuList.vue'
-import type {UserInfoType, UserType} from '@/entities/user/user.model'
+import type { UserInfoType } from '@/entities/user/user.model'
 const auth = new authenticate()
 
 const menuActive = ref<boolean>(true)
@@ -40,7 +40,6 @@ onMounted(async () => {
           </v-list>
         </div>
       </v-navigation-drawer>
-
       <v-app-bar v-if="useUserStore().isAuth">
         <v-app-bar-nav-icon icon="mdi-menu" @click="menuActive = !menuActive"></v-app-bar-nav-icon>
         <v-toolbar-title>

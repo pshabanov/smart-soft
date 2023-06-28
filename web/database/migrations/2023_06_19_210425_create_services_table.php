@@ -16,8 +16,7 @@ return new class extends Migration {
             $table->text('short_description');
             $table->string('price')->nullable();
             $table->text('image')->nullable();
-            $table->text('description')->nullable();
-            $table->text('appointment')->nullable();
+            $table->boolean('active')->default(false);
             $table->timestamps();
         });
     }

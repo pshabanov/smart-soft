@@ -28,11 +28,6 @@ export const useUserStore = defineStore('users', () => {
 
     const token = ref<string>('')
 
-    function setUserInfoAndToken(data: UserInfoType, access_token: string) {
-        userinfo.value = data
-        token.value = access_token
-    }
-
     function logout() {
         userinfo.value.user.id = null
 
@@ -46,7 +41,7 @@ export const useUserStore = defineStore('users', () => {
     })
 
     return {
-        isAuth, userinfo, token, setUserInfoAndToken, logout
+        isAuth, userinfo, token, logout
     }
 })
 

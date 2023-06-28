@@ -17,8 +17,9 @@ return new class extends Migration
             $table->text('about_company');
             $table->text('image')->nullable();
             $table->text('task_text');
-            $table->text('solution_text');
-            $table->text('results_text');
+            $table->text('solution_text')->nullable();
+            $table->text('results_text')->nullable();
+            $table->boolean('active')->default(false);
             $table->timestamps();
         });
     }

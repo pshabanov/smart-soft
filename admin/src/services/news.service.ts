@@ -2,19 +2,19 @@ import {api} from '@/utils'
 import type {UserInfoType} from '@/entities/user/user.model'
 import ky from "ky";
 import {useUserStore} from "@/stores";
+import type {BannersRequestType} from "@/entities/news/news.model";
 
 const BASE_URL = import.meta.env.VITE_BASE_URL
 
-export const UserService = () => {
+export const NewsService = () => {
 
-    const login = async (data: any) => await ky('auth/login', {
+    const news = async ():Promise<{data: BannersRequestType[]}> => await ky('news', {
         prefixUrl: `${BASE_URL}`,
-        method: 'post',
-        searchParams: {...data},
+        method: 'get',
         timeout: 60000,
     }).json()
 
-    const checkToken = async () => await ky('auth/me', {
+    const newsById = async (id:number) => await ky(`news/${id}`, {
         prefixUrl: `${BASE_URL}`,
         method: 'post',
         headers: {
@@ -29,8 +29,7 @@ export const UserService = () => {
     })
 
     return {
-        login,
-        getUsers,
-        checkToken
+        news,
+        newsById
     }
 }

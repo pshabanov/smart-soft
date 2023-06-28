@@ -1,11 +1,10 @@
 <script lang="ts" setup>
-import {onMounted, ref} from 'vue'
-import { UserService } from '@/services'
-import { authenticate } from '@/utils'
-import { useUserStore } from '@/stores'
+import {ref} from 'vue'
+import {authenticate} from '@/utils'
+import {useUserStore} from '@/stores'
 import router from '@/router'
-import { PAGES } from '@/model/menu/router.model'
-import Logo from '@/components/Logo.vue'
+import {PAGES} from '@/model/menu/router.model'
+import {UserService} from "@/services/user.service";
 
 const auth = new authenticate()
 
@@ -19,7 +18,7 @@ const login = async (e: SubmitEvent) => {
   const response = await UserService().login(form.value)
   useUserStore().isAuth = true
   useUserStore().token = response.access_token
-  router.push(PAGES.HOME)
+  await router.push(PAGES.HOME)
 }
 </script>
 
@@ -44,7 +43,7 @@ const login = async (e: SubmitEvent) => {
             type="password"
             variant="underlined"
         ></v-text-field>
-        <v-btn block type="submit" color="primary">Войти</v-btn>
+        <v-btn type="submit" color="primary">Войти</v-btn>
       </v-form>
     </div>
   </div>
