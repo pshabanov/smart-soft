@@ -24,7 +24,13 @@ class NewsResourceController extends Controller
     public function store(NewsStoreRequest $request)
     {
         //todo загрузка изображения
-        return News::create($request->validated());
+        $data = $request->validated();
+        if ($request->hasFile('file'))
+        {
+            $path = $request->file('file')->store('images/news', 'public');
+            $data['image']= url('storage/'.$path);
+        }
+        return News::create($data);
     }
 
     /**

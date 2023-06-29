@@ -21,14 +21,14 @@ const news = ref<NewsRequestType>({
   image: ''
 })
 
-const selectedImage = ref()
-function encodeImageFileAsURL(element:any) {
-  let file = element.files[0];
-  let reader = new FileReader();
-  reader.onloadend = function () {
-    console.log('RESULT', reader.result)
-  }
-}
+const files = ref([])
+// function encodeImageFileAsURL(element:any) {
+//   let file = element.files[0];
+//   let reader = new FileReader();
+//   reader.onloadend = function () {
+//     console.log('RESULT', reader.result)
+//   }
+// }
 
 onMounted(async ()=>{
   isLoading.value = true
@@ -47,7 +47,7 @@ const update = async ()=> {
 }
 
 const create = async ()=> {
-  const response = await NewsService().createNews(news.value)
+  const response = await NewsService().createNews(news.value, files.value)
   if (response.data.id){
     router.push(PAGES.NEWS)
   }
@@ -94,12 +94,11 @@ const create = async ()=> {
           <v-img :src="news.image"/>
         </v-col>
         <v-col>
-          <v-text-field
-              label="Название"
-              v-model="news.image"
-              clearable
+          <v-file-input
+              label="Выберите изображение"
               variant="solo-filled"
-          ></v-text-field>
+              v-model="files"
+          ></v-file-input>
         </v-col>
         <v-col>
           <v-switch

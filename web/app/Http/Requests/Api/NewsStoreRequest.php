@@ -22,17 +22,18 @@ class NewsStoreRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'title'=>'required:max255',
+            'title'=>'required:string',
             'description'=>'required',
-            'image'=>'required',
-            'active'=>'required'
+            'image'=>'nullable',
+            'active'=>'required',
+            'files' => 'nullable|array'
         ];
     }
 
     protected function prepareForValidation()
     {
         $this->merge([
-            'active' => $this->request->get('active') === true ? 1 : 0,
+            'active' => $this->request->get('active') === 'true' ? 1 : 0,
         ]);
     }
 }
