@@ -22,37 +22,44 @@ export const NewsService = () => {
         timeout: 60000,
     }).json()
 
-    const createNews = async (data: NewsRequestType, files: Blob[]): Promise<{ data: NewsRequestType }> => {
+    const createNews = async (data: NewsRequestType, files: Blob[]): Promise<NewsRequestType> => {
         const formData = new FormData()
         formData.append('title', data.title)
         formData.append('description', data.description)
         formData.append('active', String(data.active))
-        if (files){
+        if (files.length){
             formData.append('files', files[0])
         }
-        const response:{ data: NewsRequestType } = await ky(`news`, {
+        return await ky(`news`, {
             prefixUrl: `${ BASE_URL }`,
             method: 'post',
             headers: {
-                'Accept': 'application/json',
                 'Authorization': `Bearer ${ useUserStore().token }`,
             },
-            json: data,
+            body: formData,
             timeout: 60000,
         }).json()
-        return response
     }
 
-    const updateNews = async (data: NewsRequestType): Promise<{ data: NewsRequestType }> => await ky(`news/${ data.id }`, {
-        prefixUrl: `${ BASE_URL }`,
-        method: 'put',
-        json: data,
-        headers: {
-            'Accept': 'application/json',
-            'Authorization': `Bearer ${ useUserStore().token }`,
-        },
-        timeout: 60000,
-    }).json()
+    const updateNews = async (data: NewsRequestType, files:Blob[]): Promise<{ data: NewsRequestType }> => {
+        const formData = new FormData()
+        formData.append('title', String(data.title))
+        formData.append('description', String(data.description))
+        formData.append('active', String(data.active))
+        formData.append('image', String(data.image))
+        if (files.length){
+            formData.append('files', files[0])
+        }
+        return await ky(`news/${ data.id }`, {
+            prefixUrl: `${ BASE_URL }`,
+            method: 'put',
+            headers: {
+                'Authorization': `Bearer ${ useUserStore().token }`,
+            },
+            body: formData,
+            timeout: 60000,
+        }).json()
+    }
 
     const newsDelete = async (id: number): Promise<number | null> => await ky(`news/${ id }`, {
         prefixUrl: `${ BASE_URL }`,

@@ -3,6 +3,7 @@
 namespace App\Http\Requests\Api;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rules\File;
 
 class NewsStoreRequest extends FormRequest
 {
@@ -26,7 +27,7 @@ class NewsStoreRequest extends FormRequest
             'description'=>'required',
             'image'=>'nullable',
             'active'=>'required',
-            'files' => 'nullable|array'
+            'files' => 'nullable'
         ];
     }
 

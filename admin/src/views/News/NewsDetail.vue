@@ -22,17 +22,10 @@ const news = ref<NewsRequestType>({
 })
 
 const files = ref([])
-// function encodeImageFileAsURL(element:any) {
-//   let file = element.files[0];
-//   let reader = new FileReader();
-//   reader.onloadend = function () {
-//     console.log('RESULT', reader.result)
-//   }
-// }
 
 onMounted(async ()=>{
-  isLoading.value = true
   if (pageId){
+    isLoading.value = true
     const newsItem = await NewsService().newsById(pageId)
     isLoading.value = false
     news.value = newsItem.data
@@ -40,15 +33,19 @@ onMounted(async ()=>{
 })
 
 const update = async ()=> {
-  const response = await NewsService().updateNews(news.value)
+  isLoading.value = true
+  const response = await NewsService().updateNews(news.value, files.value)
+  isLoading.value = false
   if (response.data.id){
     router.push(PAGES.NEWS)
   }
 }
 
 const create = async ()=> {
+  isLoading.value = true
   const response = await NewsService().createNews(news.value, files.value)
-  if (response.data.id){
+  isLoading.value = false
+  if (response.id){
     router.push(PAGES.NEWS)
   }
 }
