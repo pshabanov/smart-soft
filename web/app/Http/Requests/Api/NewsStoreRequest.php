@@ -34,7 +34,7 @@ class NewsStoreRequest extends FormRequest
     protected function prepareForValidation()
     {
         $this->merge([
-            'active' => $this->request->get('active') === 'true' ? 1 : 0,
+            'active' => $this->request->get('active') === true ? 1 : 0,
         ]);
     }
 }

@@ -35,7 +35,7 @@ onMounted(async ()=>{
 
 const update = async ()=> {
   isLoading.value = true
-  if (files.value.length) news.value.image = await CommonService().uploadImage(files.value[0])
+  if (files.value.length) news.value.image = await CommonService().uploadImage(files.value[0], 'news')
   const response = await NewsService().updateNews(news.value)
   isLoading.value = false
   if (response.data.id){

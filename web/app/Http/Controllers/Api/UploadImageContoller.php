@@ -7,12 +7,13 @@ use Illuminate\Http\Request;
 
 class UploadImageContoller extends Controller
 {
+
     public function index(Request $request){
         $path = '';
         if ($request->hasFile('files'))
         {
-            $path  = $request->file('files')->store('images/'.$request->path, 'public');
+            $path = $request->file('files')->store('images/'.$request->path, 'public');
         }
-        return $path;
+        return response()->json(['image' => url('storage/'.$path)]);
     }
 }

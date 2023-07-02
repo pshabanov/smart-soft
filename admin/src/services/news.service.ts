@@ -41,7 +41,7 @@ export const NewsService = () => {
         }).json()
     }
 
-    const updateNews = async (data: NewsRequestType): Promise<NewsRequestType> => {
+    const updateNews = async (data: NewsRequestType): Promise<{data: NewsRequestType}> => {
 
         return await ky(`news/${ data.id }`, {
             prefixUrl: `${ BASE_URL }`,
