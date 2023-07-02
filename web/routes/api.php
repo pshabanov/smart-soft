@@ -5,6 +5,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use \App\Http\Controllers\Api\GetController;
 use \App\Http\Controllers\AuthController;
+use \App\Http\Controllers\Api\UploadImageContoller;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -34,6 +35,8 @@ Route::group(['middleware'=>'auth:api'], function (){
 Route::group(['middleware'=>'auth:sanctum'], function (){
     //Route::get('/get', GetController::class);
 });
+
+Route::post('upload-image', [UploadImageContoller::class, 'index']);
 
 Route::apiResources([
     'news' => NewsResourceController::class

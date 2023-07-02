@@ -8,6 +8,7 @@ import { NewsService } from '@/services/news.service'
 import router from '@/router'
 import { PAGES } from '@/model'
 import LoaderCircle from '@/components/ui/loaders/LoaderCircle.vue'
+import {CommonService} from "@/services/common.service";
 
 const route = useRoute()
 
@@ -34,7 +35,8 @@ onMounted(async ()=>{
 
 const update = async ()=> {
   isLoading.value = true
-  const response = await NewsService().updateNews(news.value, files.value)
+  if (files.value.length) news.value.image = await CommonService().uploadImage(files.value[0])
+  const response = await NewsService().updateNews(news.value)
   isLoading.value = false
   if (response.data.id){
     router.push(PAGES.NEWS)

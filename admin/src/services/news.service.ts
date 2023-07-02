@@ -41,22 +41,15 @@ export const NewsService = () => {
         }).json()
     }
 
-    const updateNews = async (data: NewsRequestType, files:Blob[]): Promise<{ data: NewsRequestType }> => {
-        const formData = new FormData()
-        formData.append('title', String(data.title))
-        formData.append('description', String(data.description))
-        formData.append('active', String(data.active))
-        formData.append('image', String(data.image))
-        if (files.length){
-            formData.append('files', files[0])
-        }
+    const updateNews = async (data: NewsRequestType): Promise<NewsRequestType> => {
+
         return await ky(`news/${ data.id }`, {
             prefixUrl: `${ BASE_URL }`,
             method: 'put',
             headers: {
                 'Authorization': `Bearer ${ useUserStore().token }`,
             },
-            body: formData,
+            json: data,
             timeout: 60000,
         }).json()
     }
