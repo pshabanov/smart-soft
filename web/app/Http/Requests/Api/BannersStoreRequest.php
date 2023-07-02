@@ -4,7 +4,7 @@ namespace App\Http\Requests\Api;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class NewsStoreRequest extends FormRequest
+class BannersStoreRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -23,9 +23,11 @@ class NewsStoreRequest extends FormRequest
     {
         return [
             'title'=>'required',
-            'description'=>'required',
+            'link'=>'required',
             'image'=>'nullable',
             'active'=>'required',
+            'gradient_start'=>'nullable',
+            'gradient_end'=>'nullable',
             'files' => 'nullable'
         ];
     }

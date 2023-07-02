@@ -3,7 +3,8 @@ import HomePage from '@/views/HomePage.vue'
 import { PAGES } from '@/model'
 import NotFoundPage from '@/views/NotFoundPage.vue'
 import LoginPage from '@/views/LoginPage.vue'
-import Banners from '@/views/Banners.vue'
+import Banners from '@/views/Banners/Banners.vue'
+import BannersDetail from '@/views/Banners/BannersDetail.vue'
 import Solutions from '@/views/Solutions.vue'
 import Services from '@/views/Services.vue'
 import News from '@/views/News/News.vue'
@@ -29,6 +30,16 @@ const router = createRouter({
       path: PAGES.BANNERS,
       name: 'banners',
       component: Banners,
+    },
+    {
+      path: PAGES.BANNERS_UPDATE,
+      name: 'banners_detail',
+      component: BannersDetail,
+    },
+    {
+      path: PAGES.BANNERS_CREATE,
+      name: 'banners_create',
+      component: BannersDetail,
     },
     {
       path: PAGES.SOLUTIONS,

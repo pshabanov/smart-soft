@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Route;
 use \App\Http\Controllers\Api\GetController;
 use \App\Http\Controllers\AuthController;
 use \App\Http\Controllers\Api\UploadImageContoller;
+use \App\Http\Controllers\Api\BannersResourceController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -26,18 +27,16 @@ Route::group(['middleware' => 'api', 'prefix' => 'auth'], function ($router) {
     Route::post('logout', [AuthController::class, 'logout']);
     Route::post('refresh', [AuthController::class, 'refresh']);
     Route::post('me', [AuthController::class, 'me']);
-});
 
-Route::group(['middleware'=>'auth:api'], function (){
-    Route::get('/get', GetController::class);
-});
+    Route::group(['middleware' => 'auth:api'], function (){
+        Route::get('get', GetController::class);
+    });
 
-Route::group(['middleware'=>'auth:sanctum'], function (){
-    //Route::get('/get', GetController::class);
-});
+    Route::post('upload-image', [UploadImageContoller::class, 'index']);
 
-Route::post('upload-image', [UploadImageContoller::class, 'index']);
+});
 
 Route::apiResources([
-    'news' => NewsResourceController::class
+    'news' => NewsResourceController::class,
+    'banners' => BannersResourceController::class,
 ]);
