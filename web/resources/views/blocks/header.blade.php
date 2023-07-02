@@ -3,8 +3,7 @@
         <div class="header">
             <div class="logo">
                 <a class="flex flex-col" href="{{ route('home') }}">
-                    <div class="text-4xl font-bold">Smart</div>
-                    <div>Soft Company</div>
+                    <img src="/images/smart-soft-company-logo.svg" alt="">
                 </a>
             </div>
             <div class="header__promo">
