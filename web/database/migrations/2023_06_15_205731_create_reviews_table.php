@@ -13,8 +13,7 @@ return new class extends Migration
     {
         Schema::create('reviews', function (Blueprint $table) {
             $table->id();
-            $table->string('position');
-            $table->string('name');
+            $table->string('company');
             $table->text('text');
             $table->text('image')->nullable();
             $table->boolean('active')->default(false);

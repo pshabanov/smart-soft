@@ -11,8 +11,8 @@ class Review extends Model
 
     protected $fillable = [
         'text',
-        'position',
-        'name',
-        'image'
+        'company',
+        'image',
+        'active'
     ];
 }

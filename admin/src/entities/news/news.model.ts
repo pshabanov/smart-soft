@@ -15,3 +15,11 @@ export interface BannersRequestType {
     gradient_end: string|null
     active: boolean
 }
+
+export interface ReviewRequestType {
+    id: number
+    text: string
+    company: string
+    image: string
+    active: boolean
+}

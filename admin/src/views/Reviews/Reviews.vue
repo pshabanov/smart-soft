@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import {onMounted, ref} from "vue";
-import {NewsService} from "@/services/news.service";
-import type { NewsRequestType } from '@/entities/news/news.model'
+import {ReviewsService} from "@/services/reviews.service";
+import type { ReviewRequestType } from '@/entities/news/news.model'
 import router from '@/router'
 import { PAGES } from '@/model'
 import DeleteDialog from '@/components/DeleteDialog.vue'
@@ -17,16 +17,16 @@ const headers = ([
   {
     title: 'Изображение',
     value: 'image',
-    align: 'center',
-  },
-  {
-    title: 'Название',
-    value: 'title',
     align: 'left',
   },
   {
-    title: 'Описание',
-    value: 'description',
+    title: 'Компания',
+    value: 'company',
+    align: 'left',
+  },
+  {
+    title: 'Отзыв',
+    value: 'text',
     align: 'center',
   },
   {
@@ -40,20 +40,20 @@ const headers = ([
     align: 'right',
   },
 ])
-const viewModel = ref<NewsRequestType[]>([])
+const viewModel = ref<ReviewRequestType[]>([])
 const deleteDialogModal = ref<boolean>(false)
 const isLoading = ref<boolean>(false)
 const editedId = ref<number>(0)
 
 onMounted(async ()=>{
   isLoading.value = true
-  const news = await NewsService().news()
+  const news = await ReviewsService().reviews()
   isLoading.value = false
   viewModel.value = news.data
 })
 
 const updateModel = (itemId: number) => {
-  router.push(`${ PAGES.NEWS_DETAIL }/${ itemId }`)
+  router.push(`${ PAGES.REVIEWS_DETAIL }/${ itemId }`)
 }
 
 const deleteModel = (itemId: number) => {
@@ -64,13 +64,13 @@ const deleteModel = (itemId: number) => {
 const deleteModelConfirm = (itemId: number) => {
   deleteDialogModal.value = false
   isLoading.value = true
-  NewsService().newsDelete(itemId).then(() => {
+  ReviewsService().reviewsDelete(itemId).then(() => {
     viewModel.value = viewModel.value.filter(item=>item.id !== itemId)
     isLoading.value = false
   })
 }
 const createNews = () => {
-  router.push(`${ PAGES.NEWS_CREATE }`)
+  router.push(`${ PAGES.REVIEWS_CREATE }`)
 }
 
 
@@ -78,7 +78,7 @@ const createNews = () => {
 
 <template>
   <PageLayout>
-    <template #title>Новости</template>
+    <template #title>Отзывы</template>
     <template #actions>
       <v-btn
           class="mr-3"
@@ -88,33 +88,39 @@ const createNews = () => {
     </template>
     <template #content>
       <data-table :headers="headers" :items="viewModel" >
-        <template #item-actions="{ item }: { item: NewsRequestType }">
-          <v-btn
-              class="mr-3"
-              color="red"
-              icon="mdi-pencil"
-              size="x-small"
-              @click="updateModel(item.id)"
-          ></v-btn>
-          <v-btn
-              class="mr-3"
-              color="red"
-              icon="mdi-delete"
-              size="x-small"
-              @click="deleteModel(item.id)"
-          ></v-btn>
+        <template #item-actions="{ item }: { item: ReviewRequestType }">
+          <div style="width: 90px;">
+            <v-btn
+                class="mr-3"
+                color="red"
+                icon="mdi-pencil"
+                size="x-small"
+                @click="updateModel(item.id)"
+            ></v-btn>
+            <v-btn
+                class="mr-3"
+                color="red"
+                icon="mdi-delete"
+                size="x-small"
+                @click="deleteModel(item.id)"
+            ></v-btn>
+          </div>
         </template>
-        <template #item-description="{ item }: { item: NewsRequestType }">
-          {{item.description.substring(0, 60)}}...
+        <template #item-text="{ item }: { item: ReviewRequestType }">
+          {{item.text.substring(0, 60)}}...
         </template>
-        <template #item-image="{ item }: { item: NewsRequestType }">
+        <template #item-image="{ item }: { item: ReviewRequestType }">
           <div style="width: 100px; height: auto; margin-right: 10px">
             <img :src="item.image" alt="">
           </div>
         </template>
-        <template #item-active="{ item }: { item: NewsRequestType }">
+        <template #item-active="{ item }: { item: ReviewRequestType }">
           <div class="table-active d-flex align-center justify-center" style="pointer-events: none">
-            <v-switch v-model="item.active" class="d-flex align-center justify-center" :color="item.active? 'primary': 'secondary'" disabled></v-switch>
+            <v-switch
+                v-model="item.active"
+                class="d-flex align-center justify-center"
+                :color="item.active? 'primary': 'secondary'"
+                disabled/>
           </div>
         </template>
       </data-table>

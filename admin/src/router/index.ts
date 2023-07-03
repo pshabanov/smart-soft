@@ -8,7 +8,8 @@ import BannersDetail from '@/views/Banners/BannersDetail.vue'
 import Solutions from '@/views/Solutions.vue'
 import Services from '@/views/Services.vue'
 import News from '@/views/News/News.vue'
-import Reviews from '@/views/Reviews.vue'
+import Reviews from '@/views/Reviews/Reviews.vue'
+import ReviewsDetail from '@/views/Reviews/ReviewsDetail.vue'
 import Certificates from '@/views/Certificates.vue'
 import NewsDetail from '@/views/News/NewsDetail.vue'
 
@@ -70,6 +71,16 @@ const router = createRouter({
       path: PAGES.REVIEWS,
       name: 'reviews',
       component: Reviews,
+    },
+    {
+      path: PAGES.REVIEWS_UPDATE,
+      name: 'reviews_detail',
+      component: ReviewsDetail,
+    },
+    {
+      path: PAGES.REVIEWS_CREATE,
+      name: 'reviews_create',
+      component: ReviewsDetail,
     },
     {
       path: PAGES.CERTIFICATES,
