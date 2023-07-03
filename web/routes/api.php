@@ -8,6 +8,7 @@ use \App\Http\Controllers\AuthController;
 use \App\Http\Controllers\Api\UploadImageContoller;
 use \App\Http\Controllers\Api\BannersController;
 use \App\Http\Controllers\Api\ReviewsController;
+use \App\Http\Controllers\Api\CertificatesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -38,5 +39,6 @@ Route::post('upload-image', [UploadImageContoller::class, 'index']);
 Route::apiResources([
     'news' => NewsResourceController::class,
     'banners' => BannersController::class,
-    'reviews' => ReviewsController::class
+    'reviews' => ReviewsController::class,
+    'certificates' => CertificatesController::class,
 ]);
