@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use \App\Http\Controllers\CertificatesController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -29,6 +29,8 @@ Route::prefix('services')->group(function (){
     Route::get('/{id}', [\App\Http\Controllers\ServicesController::class, 'detail'])->name('detail_services');
 });
 
-Auth::routes();
+Route::prefix('certificates')->group(function (){
+    Route::get('/', [CertificatesController::class, 'index'])->name('certificates');
+});
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

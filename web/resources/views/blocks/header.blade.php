@@ -2,7 +2,7 @@
     <div class="wrapper">
         <div class="header">
             <div class="logo">
-                <a class="flex flex-col" href="{{ route('home') }}">
+                <a class="flex flex-col w-full" href="{{ route('home') }}">
                     <img src="/images/smart-soft-company-logo.svg" alt="">
                 </a>
             </div>
