@@ -14,6 +14,7 @@ return new class extends Migration {
             $table->id();
             $table->string('title');
             $table->text('short_description');
+            $table->text('description');
             $table->string('price')->nullable();
             $table->text('image')->nullable();
             $table->boolean('active')->default(false);
