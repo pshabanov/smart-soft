@@ -30,3 +30,13 @@ export interface CertificatesRequestType {
     image: string
     active: boolean
 }
+
+export interface ServicesRequestType {
+    id: number
+    title: string
+    description: string
+    short_description: string
+    price: string | null
+    image: string
+    active: boolean
+}

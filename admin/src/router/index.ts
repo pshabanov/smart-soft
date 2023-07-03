@@ -6,7 +6,8 @@ import LoginPage from '@/views/LoginPage.vue'
 import Banners from '@/views/Banners/Banners.vue'
 import BannersDetail from '@/views/Banners/BannersDetail.vue'
 import Solutions from '@/views/Solutions.vue'
-import Services from '@/views/Services.vue'
+import Services from '@/views/Services/Services.vue'
+import ServicesDetail from '@/views/Services/ServicesDetail.vue'
 import News from '@/views/News/News.vue'
 import Reviews from '@/views/Reviews/Reviews.vue'
 import ReviewsDetail from '@/views/Reviews/ReviewsDetail.vue'
@@ -52,6 +53,16 @@ const router = createRouter({
       path: PAGES.SERVICES,
       name: 'services',
       component: Services,
+    },
+    {
+      path: PAGES.SERVICES_UPDATE,
+      name: 'services_detail',
+      component: ServicesDetail,
+    },
+    {
+      path: PAGES.SERVICES_CREATE,
+      name: 'services_create',
+      component: ServicesDetail,
     },
     {
       path: PAGES.NEWS,
