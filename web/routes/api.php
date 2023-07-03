@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Route;
 use \App\Http\Controllers\Api\GetController;
 use \App\Http\Controllers\AuthController;
 use \App\Http\Controllers\Api\UploadImageContoller;
-use \App\Http\Controllers\Api\BannersResourceController;
+
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -38,5 +38,5 @@ Route::group(['middleware' => 'api', 'prefix' => 'auth'], function ($router) {
 
 Route::apiResources([
     'news' => NewsResourceController::class,
-    'banners' => BannersResourceController::class,
+    'banners' => \App\Http\Controllers\Api\BannersController::class,
 ]);
