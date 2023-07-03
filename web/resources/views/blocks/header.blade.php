@@ -2,7 +2,7 @@
     <div class="wrapper">
         <div class="header">
             <div class="logo">
-                <a class="flex flex-col w-full" href="{{ route('home') }}">
+                <a class="flex flex-col w-full" href="/">
                     <img src="/images/smart-soft-company-logo.svg" alt="">
                 </a>
             </div>
@@ -32,7 +32,7 @@
     <nav class="nav">
         <div class="wrapper">
             <ul class="head-nav">
-                <li><a href="{{ route('home')  }}" class="head-nav__link">Главная</a></li>
+                <li><a href="/" class="head-nav__link">Главная</a></li>
                 <li><a href="{{ route('services_list') }}" class="head-nav__link">Услуги</a></li>
                 <li><a href="{{ route('news_list') }}" class="head-nav__link">Новости</a></li>
                 <li><a href="#" class="head-nav__link">Контакты</a></li>

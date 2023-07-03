@@ -367,7 +367,7 @@ section.news-on-main {
 }
 .services__products {
     display: grid;
-    grid-template-columns: 1fr 2fr;
+    grid-template-columns: 3fr 1fr;
     grid-column-gap: 100px;
     padding: 40px 0;
 }
@@ -383,6 +383,16 @@ section.news-on-main {
 .services__variants {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    font-weight: 900;
+    font-size: 24px;
+    padding-bottom: 20px;
+}
+.services__price {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 .services__variants-item:first-child {
     @apply border-t border-gray-200

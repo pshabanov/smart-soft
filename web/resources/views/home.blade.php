@@ -173,12 +173,12 @@
                 <div class="target__btn">Получить консультацию</div>
             </div>
         </section>
-        <section class="reviews">
+        <section class="reviews swiper reviews-slider">
             <div class="wrapper">
                 <h2 class="reviews__header">Отзывы клиентов</h2>
-                <div class="reviews__list">
+                <div class="reviews__list swiper-wrapper">
                     @foreach($reviews as $review)
-                        <div class="reviews__item">
+                        <div class="reviews__item swiper-slide">
                             <div class="reviews__item-img">
                                 <img src="{{$review->image}}" alt="">
                             </div>

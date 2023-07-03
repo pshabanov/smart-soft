@@ -28,9 +28,10 @@ Route::prefix('services')->group(function (){
     Route::get('/', [\App\Http\Controllers\ServicesController::class, 'index'])->name('services_list');
     Route::get('/{id}', [\App\Http\Controllers\ServicesController::class, 'detail'])->name('detail_services');
 });
-
 Route::prefix('certificates')->group(function (){
     Route::get('/', [CertificatesController::class, 'index'])->name('certificates');
 });
+
+Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

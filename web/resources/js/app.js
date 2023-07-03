@@ -16,7 +16,13 @@ target__btn?.addEventListener('click', ()=>{
 createApp(PopupForm).mount('#popup__form');
 
 
-new Swiper('.banner-slider', {
+const banners = new Swiper('.swiper.banner-slider', {
     loop: true,
     lazy: true,
+})
+
+const reviews = new Swiper('.swiper.reviews-slider', {
+    loop: true,
+    lazy: true,
+    slidesPerView: 4,
 })
