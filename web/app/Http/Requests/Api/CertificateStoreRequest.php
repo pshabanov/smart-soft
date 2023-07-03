@@ -4,7 +4,7 @@ namespace App\Http\Requests\Api;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class CertificatesStoreRequest extends FormRequest
+class CertificateStoreRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -27,5 +27,12 @@ class CertificatesStoreRequest extends FormRequest
             'active'=>'required',
             'files' => 'nullable'
         ];
+    }
+
+    protected function prepareForValidation()
+    {
+        $this->merge([
+            'active' => $this->request->get('active') === true ? 1 : 0,
+        ]);
     }
 }

@@ -10,7 +10,8 @@ import Services from '@/views/Services.vue'
 import News from '@/views/News/News.vue'
 import Reviews from '@/views/Reviews/Reviews.vue'
 import ReviewsDetail from '@/views/Reviews/ReviewsDetail.vue'
-import Certificates from '@/views/Certificates.vue'
+import Certificates from '@/views/Certificates/Certificates.vue'
+import CertificatesDetail from '@/views/Certificates/CertificatesDetail.vue'
 import NewsDetail from '@/views/News/NewsDetail.vue'
 
 
@@ -86,6 +87,16 @@ const router = createRouter({
       path: PAGES.CERTIFICATES,
       name: 'certificates',
       component: Certificates,
+    },
+    {
+      path: PAGES.CERTIFICATES_UPDATE,
+      name: 'certificates_detail',
+      component: CertificatesDetail,
+    },
+    {
+      path: PAGES.CERTIFICATES_CREATE,
+      name: 'certificates_create',
+      component: CertificatesDetail,
     },
     {
       path: PAGES.NOT_FOUND_404,

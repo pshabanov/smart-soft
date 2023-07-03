@@ -20,7 +20,8 @@ export const PAGES = {
     REVIEWS_DETAIL: '/reviews/update',
     REVIEWS_UPDATE: '/reviews/update/:id',
     CERTIFICATES: '/certificates',
-    CERTIFICATES_CREATE: '/certificate',
-    CERTIFICATES_DETAIL: '/certificate/:id',
+    CERTIFICATES_CREATE: '/certificates/create',
+    CERTIFICATES_DETAIL: '/certificates/update',
+    CERTIFICATES_UPDATE: '/certificates/update/:id',
     NOT_FOUND_404: '/:pathMatch(.*)*',
 }

@@ -23,3 +23,10 @@ export interface ReviewRequestType {
     image: string
     active: boolean
 }
+
+export interface CertificatesRequestType {
+    id: number
+    title: string
+    image: string
+    active: boolean
+}
