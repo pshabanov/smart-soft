@@ -40,3 +40,12 @@ export interface ServicesRequestType {
     image: string
     active: boolean
 }
+
+export interface SolutionsRequestType {
+    id: number
+    title: string
+    description: string
+    solution: string
+    image: string
+    active: boolean
+}

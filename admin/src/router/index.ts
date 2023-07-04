@@ -5,7 +5,8 @@ import NotFoundPage from '@/views/NotFoundPage.vue'
 import LoginPage from '@/views/LoginPage.vue'
 import Banners from '@/views/Banners/Banners.vue'
 import BannersDetail from '@/views/Banners/BannersDetail.vue'
-import Solutions from '@/views/Solutions.vue'
+import Solutions from '@/views/Solutions/Solutions.vue'
+import SolutionsDetail from '@/views/Solutions/SolutionsDetail.vue'
 import Services from '@/views/Services/Services.vue'
 import ServicesDetail from '@/views/Services/ServicesDetail.vue'
 import News from '@/views/News/News.vue'
@@ -48,6 +49,16 @@ const router = createRouter({
       path: PAGES.SOLUTIONS,
       name: 'solutions',
       component: Solutions,
+    },
+    {
+      path: PAGES.SOLUTIONS_UPDATE,
+      name: 'solutions_detail',
+      component: SolutionsDetail,
+    },
+    {
+      path: PAGES.SOLUTIONS_CREATE,
+      name: 'solutions_create',
+      component: SolutionsDetail,
     },
     {
       path: PAGES.SERVICES,

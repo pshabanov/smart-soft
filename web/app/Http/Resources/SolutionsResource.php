@@ -14,6 +14,14 @@ class SolutionsResource extends JsonResource
      */
     public function toArray(Request $request): array
     {
-        return parent::toArray($request);
+        return [
+            'id'=> $this->id,
+            'title'=>$this->title,
+            'description' => $this->description,
+            'solution' => $this->solution,
+            'image' => $this->image,
+            'active' => boolval($this->active),
+            'created_at'=> $this->created_at
+        ];
     }
 }
