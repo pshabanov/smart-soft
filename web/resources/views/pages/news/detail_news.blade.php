@@ -7,8 +7,10 @@
     <main class="py-6">
         <div class="wrapper">
             <section class="case">
-                <h1>{{ $news->title }}</h1>
-                <img src="{{$news->image}}" alt="">
+                <h1 class="text-center">{{ $news->title }}</h1>
+                <div class="img-center">
+                    <img src="{{$news->image}}" alt="">
+                </div>
                 <p>{{ $news->description }}</p>
             </section>
         </div>

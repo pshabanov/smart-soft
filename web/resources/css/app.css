@@ -507,6 +507,12 @@ body .splide__pagination__page.is-active{
 body .splide__pagination {
     bottom: -20px;
 }
+.img-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
 
 
 @media (max-width: 1366px) {
@@ -664,6 +670,9 @@ body .splide__pagination {
     .news-on-main__item:last-child {
         border-bottom: none;
     }
+    h2 {
+        text-align: center;
+    }
 }
 
 @media (max-width: 550px) {
@@ -685,6 +694,9 @@ body .splide__pagination {
     }
     .header__icon-place {
         display: none;
+    }
+    h1 {
+        font-size: 1.5em;
     }
 }
 @media (max-width: 425px) {
