@@ -10,6 +10,7 @@ use \App\Http\Controllers\Api\BannersController;
 use \App\Http\Controllers\Api\ReviewsController;
 use \App\Http\Controllers\Api\CertificatesController;
 use \App\Http\Controllers\Api\ServicesController;
+use \App\Http\Controllers\Api\SolutionsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -43,4 +44,5 @@ Route::apiResources([
     'reviews' => ReviewsController::class,
     'certificates' => CertificatesController::class,
     'services' => ServicesController::class,
+    'solutions' => SolutionsController::class,
 ]);

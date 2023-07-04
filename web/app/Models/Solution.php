@@ -5,16 +5,15 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Project extends Model
+class Solution extends Model
 {
     use HasFactory;
 
     protected $fillable = [
         'title',
-        'about_company',
+        'description',
+        'solution',
         'image',
-        'task_text',
-        'solution_text',
-        'results_text'
+        'active'
     ];
 }
