@@ -173,24 +173,25 @@
                 <div class="target__btn">Получить консультацию</div>
             </div>
         </section>
-        <section class="reviews swiper reviews-slider">
+        <section class="reviews reviews-slider splide">
             <div class="wrapper">
                 <h2 class="reviews__header">Отзывы клиентов</h2>
-                <div class="reviews__list swiper-wrapper">
-                    @foreach($reviews as $review)
-                        <div class="reviews__item swiper-slide">
-                            <div class="reviews__item-img">
-                                <img src="{{$review->image}}" alt="">
+                <div class="splide__track">
+                    <div class="reviews__list splide__list">
+                        @foreach($reviews as $review)
+                            <div class="reviews__item splide__slide">
+                                <div class="reviews__item-img">
+                                    <img src="{{$review->image}}" alt="">
+                                </div>
+                                <div class="reviews__item-text">
+                                    {{$review->text}}
+                                </div>
+                                <div class="reviews__item-author">
+                                    <div class="reviews__item-author__company">{{$review->company}}</div>
+                                </div>
                             </div>
-                            <div class="reviews__item-text">
-                                {{$review->text}}
-                            </div>
-                            <div class="reviews__item-author">
-                                <div class="reviews__item-author__company">{{$review->position}}</div>
-                                <div class="reviews__item-author__name">{{$review->name}}</div>
-                            </div>
-                        </div>
-                    @endforeach
+                        @endforeach
+                    </div>
                 </div>
             </div>
         </section>
