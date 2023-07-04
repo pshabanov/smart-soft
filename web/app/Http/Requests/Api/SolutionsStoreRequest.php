@@ -33,8 +33,15 @@ class SolutionsStoreRequest extends FormRequest
 
     protected function prepareForValidation()
     {
-        $this->merge([
-            'active' => $this->request->get('active') === true ? 1 : 0,
-        ]);
+        if (gettype($this->request->get('active'))==='boolean'){
+            $this->merge([
+                'active' => $this->request->get('active') === true ? 1 : 0,
+            ]);
+        }else {
+            $this->merge([
+                'active' => $this->request->get('active') === "true" ? 1 : 0,
+            ]);
+        }
+
     }
 }

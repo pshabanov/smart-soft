@@ -25,12 +25,11 @@ class SolutionsController extends Controller
     {
         $data = $request->validated();
         if ($request->hasFile('files')) {
-            $path = $request->file('files')->store('images/services', 'public');
+            $path = $request->file('files')->store('images/solutions', 'public');
             $data['image'] = url('storage/' . $path);
             unset($data['files']);
         }
-
-        return Solution::query()->create($data);
+        return $data;
     }
 
     /**
