@@ -298,12 +298,6 @@ section.news-on-main {
     @apply hover:bg-main-red hover:text-white hover:border-transparent transition;
 }
 
-.reviews__list {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-column-gap: 30px;
-}
-
 .reviews__item {
     background-color: #fff;
     border-radius: 16px;
@@ -512,6 +506,17 @@ body .splide__pagination {
     align-items: center;
     justify-content: center;
     padding: 20px;
+}
+.contacts__list {
+    padding: 50px 0;
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 50px;
+}
+.social__list {
+    padding: 10px 0;
+    display: flex;
+    column-gap: 10px;
 }
 
 

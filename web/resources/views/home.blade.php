@@ -184,7 +184,7 @@
                                     <img src="{{$review->image}}" alt="">
                                 </div>
                                 <div class="reviews__item-text">
-                                    {{$review->text}}
+                                    {!! $review->text !!}
                                 </div>
                                 <div class="reviews__item-author">
                                     <div class="reviews__item-author__company">{{$review->company}}</div>

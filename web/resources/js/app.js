@@ -30,10 +30,11 @@ if (document.querySelector('.splide'))
             1920: {
                 perPage: 3,
                 type: 'loop',
-                drag: 'free',
+                drag: true,
+                gap: 20,
             },
             1280: {
-                perPage: 3,
+                perPage: 2,
                 type: 'loop',
                 drag: false,
             },

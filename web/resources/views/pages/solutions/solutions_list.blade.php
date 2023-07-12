@@ -9,9 +9,9 @@
             <section class="case">
                 <h1>Наши проекты</h1>
                 <div class="news__list">
-                    @each('pages.projects.partials.item', $projects, 'projects')
+                    @each('pages.projects.partials.item', $solutions, 'solutions')
                 </div>
-                {{ $projects->links() }}
+                {{ $solutions->links() }}
             </section>
         </div>
     </main>

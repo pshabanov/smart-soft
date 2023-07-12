@@ -20,9 +20,9 @@ Route::prefix('news')->group(function (){
     Route::get('/{id}', [\App\Http\Controllers\NewsController::class, 'detail'])->name('detail_news');
 });
 
-Route::prefix('projects')->group(function (){
-    Route::get('/', [\App\Http\Controllers\ProjectsController::class, 'index'])->name('projects_list');
-    Route::get('/{id}', [\App\Http\Controllers\ProjectsController::class, 'detail'])->name('detail_project');
+Route::prefix('solutions')->group(function (){
+    Route::get('/', [\App\Http\Controllers\SolutionsController::class, 'index'])->name('solutions_list');
+    Route::get('/{id}', [\App\Http\Controllers\SolutionsController::class, 'detail'])->name('detail_solutions');
 });
 Route::prefix('services')->group(function (){
     Route::get('/', [\App\Http\Controllers\ServicesController::class, 'index'])->name('services_list');
@@ -30,6 +30,14 @@ Route::prefix('services')->group(function (){
 });
 Route::prefix('certificates')->group(function (){
     Route::get('/', [CertificatesController::class, 'index'])->name('certificates');
+});
+
+Route::prefix('contacts')->group(function (){
+    Route::get('/', [\App\Http\Controllers\ContactsController::class, 'index'])->name('contacts');
+});
+
+Route::prefix('about-us')->group(function (){
+    Route::get('/', [\App\Http\Controllers\AboutUsController::class, 'index'])->name('about-us');
 });
 
 Auth::routes();

@@ -25,7 +25,7 @@
             <div class="header__contact header__icon-phone">
                 <div class="header__contact-title">Контакты</div>
                 <div class="header__contact-text">(0550) 11 88 28</div>
-                <div class="header__contact-text">some@ssc.kg</div>
+                <div class="header__contact-text">1cmyprog@gmail.com</div>
             </div>
             <div class="burger __mob">
                 <svg width="36" height="36" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
