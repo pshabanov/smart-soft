@@ -9,7 +9,7 @@
             <section class="case">
                 <h1>Наши проекты</h1>
                 <div class="news__list">
-                    @each('pages.projects.partials.item', $solutions, 'solutions')
+                    @each('pages.solutions.partials.item', $solutions, 'solutions')
                 </div>
                 {{ $solutions->links() }}
             </section>

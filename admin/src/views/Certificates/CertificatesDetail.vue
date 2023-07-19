@@ -61,6 +61,7 @@ const create = async () => {
       <v-btn
           variant="outlined"
           color="primary"
+          class="mr-10"
           @click="pageId ? update(): create()"
       >
         Сохранить

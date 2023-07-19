@@ -29,7 +29,7 @@ class SolutionsController extends Controller
             $data['image'] = url('storage/' . $path);
             unset($data['files']);
         }
-        return $data;
+        return Solution::query()->create($data);
     }
 
     /**

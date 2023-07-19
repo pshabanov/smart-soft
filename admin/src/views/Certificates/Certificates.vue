@@ -76,7 +76,7 @@ const createCertificates = () => {
     <template #title>Отзывы</template>
     <template #actions>
       <v-btn
-          class="mr-3"
+          class="mr-10"
           color="primary"
           @click="createCertificates()"
       >Добавить</v-btn>
