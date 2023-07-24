@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use \App\Http\Controllers\CertificatesController;
+use App\Http\Controllers\SendPhoneController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -39,6 +40,8 @@ Route::prefix('contacts')->group(function (){
 Route::prefix('about-us')->group(function (){
     Route::get('/', [\App\Http\Controllers\AboutUsController::class, 'index'])->name('about-us');
 });
+
+Route::post('send_phone', [SendPhoneController::class, 'index']);
 
 Auth::routes();
 

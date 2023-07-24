@@ -1,16 +1,16 @@
 <?php
 
+use App\Http\Controllers\Api\BannersController;
+use App\Http\Controllers\Api\CertificatesController;
+use App\Http\Controllers\Api\GetController;
 use App\Http\Controllers\Api\NewsResourceController;
+use App\Http\Controllers\Api\ReviewsController;
+use App\Http\Controllers\Api\ServicesController;
+use App\Http\Controllers\Api\SolutionsController;
+use App\Http\Controllers\Api\UploadImageContoller;
+use App\Http\Controllers\AuthController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use \App\Http\Controllers\Api\GetController;
-use \App\Http\Controllers\AuthController;
-use \App\Http\Controllers\Api\UploadImageContoller;
-use \App\Http\Controllers\Api\BannersController;
-use \App\Http\Controllers\Api\ReviewsController;
-use \App\Http\Controllers\Api\CertificatesController;
-use \App\Http\Controllers\Api\ServicesController;
-use \App\Http\Controllers\Api\SolutionsController;
 
 /*
 |--------------------------------------------------------------------------

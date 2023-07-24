@@ -120,13 +120,24 @@ h2 {
 .case__item-subtitle {
     @apply pt-6 pb-2 font-semibold text-gray-500
 }
-
+.message {
+    text-align: center;
+    font-weight: 500;
+}
 .case__item-text {
     @apply mb-16 text-main-grey
 }
 
 .btn {
+    cursor: pointer;
     @apply inline-block py-4 px-36 bg-main-yellow/80 rounded hover:bg-main-red hover:text-white transition font-semibold uppercase;
+}
+.btn[disabled="true"] {
+    background-color: #c1c1c1;
+}
+.btn[disabled="true"]:hover {
+    color: #000;
+    cursor: auto;
 }
 
 .ww-best__list {
