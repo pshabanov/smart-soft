@@ -45,6 +45,7 @@ export interface SolutionsRequestType {
     id: number
     title: string
     description: string
+    about_company: string
     solution: string
     image: string
     active: boolean

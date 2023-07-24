@@ -27,6 +27,7 @@ export const SolutionsService = () => {
         formData.append('title', data.title)
         formData.append('description', data.description)
         formData.append('solution', data.solution)
+        formData.append('about_company', data.about_company)
         formData.append('image', data.image)
         formData.append('active', String(data.active))
         if (files.length){

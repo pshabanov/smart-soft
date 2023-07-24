@@ -19,6 +19,7 @@ const solutions = ref<SolutionsRequestType>({
   title: '',
   description: '',
   solution: '',
+  about_company: '',
   active: false,
   image: ''
 })
@@ -78,6 +79,16 @@ const create = async ()=> {
               clearable
               variant="solo-filled"
           ></v-text-field>
+        </v-col>
+      </v-row>
+      <v-row>
+        <v-col>
+          <v-textarea
+              label="Описание компании"
+              v-model="solutions.about_company"
+              clearable
+              variant="solo-filled"
+          ></v-textarea>
         </v-col>
       </v-row>
       <v-row>

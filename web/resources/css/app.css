@@ -106,11 +106,7 @@ h2 {
     display: grid;
     grid-template-columns: 2fr 1fr;
     grid-column-gap: 30px;
-    @apply pt-8 pb-6 border-b border-gray-200;
-}
-
-.case__item:last-child {
-    @apply border-b-0
+    @apply pt-8 pb-6;
 }
 
 .case__item-title {
@@ -529,7 +525,15 @@ body .splide__pagination {
     display: flex;
     column-gap: 10px;
 }
+.pagination {
+    display: flex;
+    justify-content: space-between;
+ }
 
+.pagination,
+.pagination li{
+    list-style: none;
+}
 
 @media (max-width: 1366px) {
     .wrapper {

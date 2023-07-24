@@ -8,7 +8,9 @@ class SolutionsController extends Controller
 {
     public function index()
     {
-        $solutions = Solution::query()->orderBy("created_at", 'desc')->simplePaginate(5);
+        $solutions = Solution::query()
+            ->orderBy("created_at", 'desc')
+            ->simplePaginate(6);
         return view('pages.solutions.solutions_list', [
             'solutions' => $solutions
         ]);

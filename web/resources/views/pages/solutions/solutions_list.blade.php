@@ -11,7 +11,7 @@
                 <div class="news__list">
                     @each('pages.solutions.partials.item', $solutions, 'solutions')
                 </div>
-                {{ $solutions->links() }}
+                {{ $solutions->links('vendor.pagination.default') }}
             </section>
         </div>
     </main>

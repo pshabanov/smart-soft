@@ -1,7 +1,7 @@
 <div class="case__item">
     <div class="case__item-info">
         <h2 class="case__item-title">{{$solutions->title}}</h2>
-        <div class="case__item-subtitle">О заказчике:</div>
+        <div class="case__item-subtitle">О задаче:</div>
         <div class="case__item-text">
             {!! $solutions->description !!}
         </div>

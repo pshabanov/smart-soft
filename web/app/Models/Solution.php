@@ -13,6 +13,7 @@ class Solution extends Model
         'title',
         'description',
         'solution',
+        'about_company',
         'image',
         'active'
     ];
