@@ -15,7 +15,7 @@ class ServicesController extends Controller
      */
     public function index()
     {
-        return ServicesResource::collection(Service::all());
+        return ServicesResource::collection(Service::orderBy('id', 'DESC')->get());
     }
 
     /**
