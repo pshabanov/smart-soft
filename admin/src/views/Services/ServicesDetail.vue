@@ -16,6 +16,7 @@ const pageId = route.params.id
 const isLoading = ref<boolean>(false)
 const services = ref<ServicesRequestType>({
   id: 0,
+  position: 0,
   title: '',
   short_description: '',
   description: '',
@@ -29,28 +30,43 @@ const files = ref([])
 onMounted(async ()=>{
   if (pageId){
     isLoading.value = true
-    const newsItem = await ServicesService().servicesById(pageId)
-    isLoading.value = false
-    services.value = newsItem.data
+    try {
+      const newsItem = await ServicesService().servicesById(Number(pageId))
+      isLoading.value = false
+      services.value = newsItem.data
+    }catch (e){
+      console.log(e)
+      isLoading.value = false
+    }
   }
 })
 
 const update = async ()=> {
   isLoading.value = true
   if (files.value.length) services.value.image = await CommonService().uploadImage(files.value[0], 'services')
-  const response = await ServicesService().updateServices(services.value)
-  isLoading.value = false
-  if (response.data.id){
-    router.push(PAGES.SERVICES)
+  try {
+    const response = await ServicesService().updateServices(services.value)
+    isLoading.value = false
+    if (response.data.id){
+      router.push(PAGES.SERVICES)
+    }
+  }catch (e){
+    console.log(e)
+    isLoading.value = false
   }
 }
 
 const create = async ()=> {
   isLoading.value = true
-  const response = await ServicesService().createServices(services.value, files.value)
-  isLoading.value = false
-  if (response.id){
-    router.push(PAGES.SERVICES)
+  try {
+    const response = await ServicesService().createServices(services.value, files.value)
+    isLoading.value = false
+    if (response.id){
+      router.push(PAGES.SERVICES)
+    }
+  }catch (e){
+    console.log(e)
+    isLoading.value = false
   }
 }
 
@@ -86,6 +102,14 @@ const create = async ()=> {
           <v-text-field
               label="Цена"
               v-model="services.price"
+              type="number"
+              variant="solo-filled"
+          ></v-text-field>
+        </v-col>
+        <v-col cols="2">
+          <v-text-field
+              label="Сортировка"
+              v-model="services.position"
               type="number"
               variant="solo-filled"
           ></v-text-field>

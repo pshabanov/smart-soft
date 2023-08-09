@@ -43,6 +43,7 @@ export interface CertificatesRequestType {
 
 export interface ServicesRequestType {
     id: number
+    position: number
     title: string
     description: string
     short_description: string

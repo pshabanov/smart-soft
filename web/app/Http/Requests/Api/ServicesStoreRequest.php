@@ -25,6 +25,7 @@ class ServicesStoreRequest extends FormRequest
             'title'=>'required',
             'short_description'=>'required',
             'description'=>'required',
+            'position'=>'nullable',
             'price'=>'nullable',
             'image'=>'nullable',
             'active'=>'required',

@@ -543,6 +543,9 @@ body .splide__pagination {
     height: 100%;
     align-items: center;
 }
+.banner__item {
+    overflow: hidden;
+}
 .banner__item-img {
     height: 100%;
     display: flex;
@@ -638,6 +641,15 @@ body .splide__pagination {
 
     .services__item-img img {
         max-width: 450px;
+    }
+}
+@media (max-width: 991px) {
+    .banner__item-info__bg {
+        height: 300%;
+        transform: rotate(0);
+    }
+    .banner__item-wrapper {
+        grid-template-columns: 1fr;
     }
 }
 @media (max-width: 768px) {
@@ -803,6 +815,11 @@ body .splide__pagination {
     }
     h1 {
         font-size: 1.5em;
+    }
+    .banner__item .btn{
+        padding-left: 0;
+        padding-right: 0;
+        width: 100%;
     }
 }
 @media (max-width: 425px) {

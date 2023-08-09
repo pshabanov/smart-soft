@@ -20,6 +20,11 @@ const headers = ([
     align: 'left',
   },
   {
+    title: 'Сортировка',
+    value: 'position',
+    align: 'left',
+  },
+  {
     title: 'Цена',
     value: 'price',
     align: 'left',
