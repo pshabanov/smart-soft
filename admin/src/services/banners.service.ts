@@ -24,9 +24,12 @@ export const BannersService = () => {
     const createBanners = async (data: BannersRequestType, files: Blob[]): Promise<BannersRequestType> => {
         const formData = new FormData()
         formData.append('title', data.title)
+        formData.append('description', data.description)
+        formData.append('position', String(data.position))
         formData.append('link', data.link)
-        formData.append('gradient_start', data.gradient_start || '')
-        formData.append('gradient_end', data.gradient_end || '')
+        formData.append('gradient_start', data.gradient_start || '255, 255, 255')
+        formData.append('gradient_end', data.gradient_end || '255, 255, 255')
+        formData.append('gradient_under_info', data.gradient_under_info || '0, 0, 0')
         formData.append('active', String(data.active))
         if (files.length){
             formData.append('files', files[0])

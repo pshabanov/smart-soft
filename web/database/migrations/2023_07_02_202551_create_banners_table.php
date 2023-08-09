@@ -14,10 +14,13 @@ return new class extends Migration
         Schema::create('banners', function (Blueprint $table) {
             $table->id();
             $table->string('title');
+            $table->string('description');
+            $table->integer('position')->default(0);
             $table->text('link');
             $table->text('image')->nullable();
             $table->text('gradient_start')->nullable();
             $table->text('gradient_end')->nullable();
+            $table->text('gradient_under_info')->nullable();
             $table->boolean('active')->default(false);
             $table->timestamps();
         });

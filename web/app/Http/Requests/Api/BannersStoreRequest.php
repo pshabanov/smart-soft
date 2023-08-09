@@ -23,6 +23,8 @@ class BannersStoreRequest extends FormRequest
     {
         return [
             'title'=>'required',
+            'description'=>'required',
+            'position'=>'required',
             'link'=>'required',
             'image'=>'nullable',
             'active'=>'required',

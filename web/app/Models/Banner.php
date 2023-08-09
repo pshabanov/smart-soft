@@ -11,10 +11,13 @@ class Banner extends Model
 
     protected $fillable = [
         'title',
+        'description',
+        'position',
         'link',
         'image',
         'gradient_start',
         'gradient_end',
+        'gradient_under_info',
         'active'
     ];
 }

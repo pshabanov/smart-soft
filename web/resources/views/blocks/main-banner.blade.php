@@ -1,25 +1,26 @@
 <section class="section swiper banner-slider">
     <ul class="swiper-wrapper banner__list">
-        <li class="banner__item swiper-slide">
-            <div class="bg-gradient-to-r from-amber-700 to-purple-600 h-full text-white flex items-center justify-center">
-                Banner 1
+        @foreach($banners as $banner)
+            <li class="banner__item swiper-slide">
+            <div class="banner__item-gradient"
+                 style="background: linear-gradient(90deg, rgba({{$banner->gradient_start}}, 1) 0%, rgba({{$banner->gradient_end}}, 1) 100%);"
+            >
+                <div class="banner__wrapper">
+                    <div class="banner__item-wrapper">
+                        <div class="banner__item-info">
+                            <h2>{{$banner->title}}</h2>
+                            <p>{!! $banner->description !!}</p>
+                            <a href="#" class="btn">Подробнее</a>
+                            <div class="banner__item-info__bg" style="background: linear-gradient(0deg, rgba({{$banner->gradient_under_info}}, 0) 0%, rgba({{$banner->gradient_under_info}},0.4) 100%);"></div>
+                        </div>
+                        <div class="banner__item-img">
+                            <img src="/images/banner_default.png" alt="">
+                        </div>
+                    </div>
+                </div>
             </div>
         </li>
-        <li class="banner__item swiper-slide">
-            <div class="bg-gradient-to-r to-amber-700 from-purple-600 h-full text-white flex items-center justify-center">
-                Banner 2
-            </div>
-        </li>
-        <li class="banner__item swiper-slide">
-            <div class="bg-gradient-to-r from-amber-700 to-purple-600 h-full text-white flex items-center justify-center">
-                Banner 3
-            </div>
-        </li>
-        <li class="banner__item swiper-slide">
-            <div class="bg-gradient-to-r to-amber-700 from-purple-600 h-full text-white flex items-center justify-center">
-                Banner 4
-            </div>
-        </li>
+        @endforeach
     </ul>
 </section>
 

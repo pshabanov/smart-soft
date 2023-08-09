@@ -78,7 +78,7 @@ const createBanners = () => {
 
 <template>
   <PageLayout>
-    <template #title>Новости</template>
+    <template #title>Баннера</template>
     <template #actions>
       <v-btn
           class="mr-10"

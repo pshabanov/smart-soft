@@ -8,12 +8,22 @@ export interface NewsRequestType {
 
 export interface BannersRequestType {
     id: number
+    position: number
     title: string
+    description: string
     link: string
     image: string
-    gradient_start: string|null
-    gradient_end: string|null
+    gradient_start: string
+    gradient_end: string
+    gradient_under_info: string
     active: boolean
+}
+
+export interface RGBA {
+    r: number
+    g: number
+    b: number
+    a?: number
 }
 
 export interface ReviewRequestType {
