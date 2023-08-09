@@ -35,6 +35,28 @@ onMounted(async ()=>{
   if (pageId){
     isLoading.value = true
     const newsItem = await BannersService().bannersById(Number(pageId))
+    if (newsItem.data.gradient_start) {
+      gradient_start.value = {
+        r: +newsItem.data.gradient_start.split(', ')[0],
+        g: +newsItem.data.gradient_start.split(', ')[1],
+        b: +newsItem.data.gradient_start.split(', ')[2],
+      }
+    }
+    if (newsItem.data.gradient_end){
+    gradient_end.value = {
+      r: +newsItem.data.gradient_end.split(', ')[0],
+      g: +newsItem.data.gradient_end.split(', ')[1],
+      b: +newsItem.data.gradient_end.split(', ')[2],
+    }
+      }
+    if (newsItem.data.gradient_under_info){
+      gradient_under_info.value = {
+        r: +newsItem.data.gradient_under_info.split(', ')[0],
+        g: +newsItem.data.gradient_under_info.split(', ')[1],
+        b: +newsItem.data.gradient_under_info.split(', ')[2],
+      }
+    }
+
     isLoading.value = false
     banners.value = newsItem.data
   }
@@ -42,11 +64,19 @@ onMounted(async ()=>{
 
 const update = async ()=> {
   isLoading.value = true
+  banners.value.gradient_start = `${gradient_start.value.r}, ${gradient_start.value.g}, ${gradient_start.value.b}`
+  banners.value.gradient_end = `${gradient_end.value.r}, ${gradient_end.value.g}, ${gradient_end.value.b}`
+  banners.value.gradient_under_info = `${gradient_under_info.value.r}, ${gradient_under_info.value.g}, ${gradient_under_info.value.b}`
   if (files.value.length) banners.value.image = await CommonService().uploadImage(files.value[0], 'banners')
-  const response = await BannersService().updateBanners(banners.value)
-  isLoading.value = false
-  if (response.data.id){
-    router.push(PAGES.BANNERS)
+  try {
+    const response = await BannersService().updateBanners(banners.value)
+    isLoading.value = false
+    if (response.data.id){
+      router.push(PAGES.BANNERS)
+    }
+  }catch (e){
+    console.log(e)
+    isLoading.value = false
   }
 }
 
@@ -65,8 +95,6 @@ const create = async ()=> {
     console.log(e)
     isLoading.value = false
   }
-
-
 }
 
 

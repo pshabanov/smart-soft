@@ -30,6 +30,7 @@ class BannersStoreRequest extends FormRequest
             'active'=>'required',
             'gradient_start'=>'nullable',
             'gradient_end'=>'nullable',
+            'gradient_under_info'=>'nullable',
             'files' => 'nullable'
         ];
     }

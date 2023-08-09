@@ -549,7 +549,8 @@ body .splide__pagination {
     align-items: end;
 }
 .banner__item-img img{
-    height: 60%;
+    height: auto;
+    max-height: 90%;
 }
 .banner__wrapper {
     max-width: 1366px;

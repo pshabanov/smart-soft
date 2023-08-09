@@ -17,10 +17,13 @@ class BannersResource extends JsonResource
         return [
             'id'=> $this->id,
             'title'=>$this->title,
+            'description'=>$this->description,
+            'position'=>$this->position,
             'link'=> $this->link,
             'image' => $this->image,
             'gradient_start' => $this->gradient_start,
             'gradient_end' => $this->gradient_end,
+            'gradient_under_info' => $this->gradient_under_info,
             'active' => boolval($this->active),
             'created_at'=> $this->created_at
         ];

@@ -10,11 +10,11 @@
                         <div class="banner__item-info">
                             <h2>{{$banner->title}}</h2>
                             <p>{!! $banner->description !!}</p>
-                            <a href="#" class="btn">Подробнее</a>
+                            <a href="{{$banner->link}}" class="btn">Подробнее</a>
                             <div class="banner__item-info__bg" style="background: linear-gradient(0deg, rgba({{$banner->gradient_under_info}}, 0) 0%, rgba({{$banner->gradient_under_info}},0.4) 100%);"></div>
                         </div>
                         <div class="banner__item-img">
-                            <img src="/images/banner_default.png" alt="">
+                            <img src="{{$banner->image}}" alt="">
                         </div>
                     </div>
                 </div>
