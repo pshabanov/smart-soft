@@ -8,12 +8,13 @@
             </div>
             <div class="header__promo">
                 <div class="header__promo-block">
-                    <div class="header__promo-title">Официльный партнер</div>
+                    <div class="header__promo-title">Официальный партнер</div>
                     <div class="header__promo-subtitle">1С в Кыргызстане</div>
                 </div>
                 <div class="header__promo-block">
-                    <div class="header__promo-title">Более 15 лет</div>
-                    <div class="header__promo-subtitle">технического опыта</div>
+                    <div class="header__promo-title">20 лет опыта</div>
+                    <div class="header__promo-subtitle">внедрений продуктов 1с<br>
+                    </div>
                 </div>
             </div>
             <div class="border-l border-gray-200 h-full devider"></div>
