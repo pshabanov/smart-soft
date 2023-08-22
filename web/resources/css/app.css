@@ -594,6 +594,33 @@ body .splide__pagination {
     @apply h-full text-white flex items-center justify-center
 }
 
+.services__tariff
+{
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 16px;
+    margin-bottom: 30px;
+}
+.services__tariff ul li{
+    position: relative;
+    padding-left: 20px;
+}
+.services__tariff ul li:after {
+    position: absolute;
+    content: '';
+    top: 9px;
+    left: 0;
+    background-color: #ffcb3d;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+}
+.services__prices {
+    padding-top: 40px;
+    font-weight: 700;
+    font-size: 22px;
+}
+
 @media (max-width: 1366px) {
     .wrapper {
         width: auto;
