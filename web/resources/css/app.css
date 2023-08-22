@@ -1,5 +1,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
+:root {
+    --var-bgcolor: #fff;
+    --var-fontcolor: #000;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --var-bgcolor: #fff;
+        --var-fontcolor: #000;
+    }
+}
+body {
+    background-color: var(--var-bgcolor);
+    color: var(--var-fontcolor);
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -501,10 +517,6 @@ section.news-on-main {
 
 .__desk.head-nav {
     display: flex;
-}
-body {
-    background-color: #fff;
-    color: #000;
 }
 
 body .splide__pagination__page.is-active{

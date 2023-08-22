@@ -18,16 +18,24 @@
                                 src="{{$services->image ? $services->image : 'https://t4.ftcdn.net/jpg/04/73/25/49/360_F_473254957_bxG9yf4ly7OBO5I0O5KABlN930GwaMQz.jpg'}}"
                                 alt="">
                         </div>
-                        <div class="services__variants">
-                            Цена:  {{$services->price}} сом
-                        </div>
+                        @if($services->id === 22)
+                            <div class="services__variants">
+                                Цена: В зависимости от тарифа
+                            </div>
+                        @else
+                            <div class="services__variants">
+                                Цена: {{$services->price}} сом
+                            </div>
+                        @endif
+
                     </div>
                 </div>
 
-               <h2>Описание</h2>
+                <h2>Описание</h2>
                 <div class="services__tab-content content-1">
                     {!! $services->description !!}
                 </div>
+
 
             </section>
         </div>
