@@ -12,7 +12,7 @@
     }
 }
 body {
-    background-color: var(--var-bgcolor);
+    background-color: var(--var-bgcolor) !important;
     color: var(--var-fontcolor);
 }
 
@@ -913,5 +913,10 @@ body .splide__pagination {
     .burger svg{
         width: 56px;
         height: 56px;
+    }
+}
+@media (prefers-color-scheme: dark){
+    .dark\:bg-slate-900 {
+        background-color: #fff;
     }
 }
