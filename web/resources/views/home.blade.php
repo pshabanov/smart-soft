@@ -195,6 +195,7 @@
                 </div>
             </div>
         </section>
+        @if(count($news) !== 0)
         <section class="news-on-main">
             <div class="wrapper">
                 <h2 class="news-on-main__header">Последние новости</h2>
@@ -203,6 +204,7 @@
                 </div>
             </div>
         </section>
+        @endif
     </main>
 
     @include('blocks.footer')

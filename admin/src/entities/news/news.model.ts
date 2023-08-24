@@ -39,6 +39,7 @@ export interface CertificatesRequestType {
     title: string
     image: string
     active: boolean
+    position: number
 }
 
 export interface ServicesRequestType {

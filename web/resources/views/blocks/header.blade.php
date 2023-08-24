@@ -20,7 +20,7 @@
             <div class="border-l border-gray-200 h-full devider"></div>
             <div class="header__contact header__icon-place">
                 <div class="header__contact-title">Адрес</div>
-                <div class="header__contact-text">г. Бишкек</div>
+                <div class="header__contact-text">г. Бишкек<br>ул. Целиноградская 110А</div>
                 <div class="header__contact-text">&nbsp;</div>
             </div>
             <div class="header__contact header__icon-phone">

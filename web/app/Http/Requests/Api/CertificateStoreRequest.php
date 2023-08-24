@@ -25,6 +25,7 @@ class CertificateStoreRequest extends FormRequest
             'title'=>'required',
             'image'=>'nullable',
             'active'=>'required',
+            'position'=>'nullable',
             'files' => 'nullable'
         ];
     }

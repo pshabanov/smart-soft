@@ -18,7 +18,8 @@ const certificate = ref<CertificatesRequestType>({
   id: 0,
   title: '',
   active: false,
-  image: ''
+  image: '',
+  position: 0
 })
 
 const files = ref([])
@@ -88,6 +89,14 @@ const create = async () => {
               variant="solo-filled"
               v-model="files"
           ></v-file-input>
+        </v-col>
+        <v-col>
+          <v-text-field
+              label="Приоритет"
+              v-model="certificate.position"
+              clearable
+              variant="solo-filled"
+          ></v-text-field>
         </v-col>
         <v-col>
           <v-switch

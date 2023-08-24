@@ -30,6 +30,11 @@ const headers = ([
     align: 'center',
   },
   {
+    title: 'Активность',
+    value: 'position',
+    align: 'center',
+  },
+  {
     title: 'Действия',
     value: 'actions',
     align: 'right',

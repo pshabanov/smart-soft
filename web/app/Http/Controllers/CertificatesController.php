@@ -8,7 +8,7 @@ class CertificatesController extends Controller
 {
     public function index()
     {
-        $certificates = Certificate::query()->orderBy("created_at", 'desc')->get();
+        $certificates = Certificate::query()->orderBy("position", 'desc')->get();
         return view('pages.certificates.certificates', [
             'certificates' => $certificates
         ]);

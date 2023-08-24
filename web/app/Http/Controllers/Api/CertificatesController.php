@@ -12,7 +12,7 @@ class CertificatesController extends Controller
 {
     public function index()
     {
-        return CertificateResource::collection(Certificate::all());
+        return CertificateResource::collection(Certificate::orderBy('position', 'DESC')->get());
     }
 
     /**

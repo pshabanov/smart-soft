@@ -19,6 +19,7 @@ class CertificateResource extends JsonResource
             'title'=>$this->title,
             'image' => $this->image,
             'active' => boolval($this->active),
+            'position' => $this->position,
             'created_at'=> $this->created_at
         ];
     }
