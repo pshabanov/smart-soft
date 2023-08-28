@@ -21,7 +21,7 @@
                     <div class="header__contact-text">1cmyprog@gmail.com</div>
                 </div>
             </div>
-            <div class="header__contact header__icon-place">
+            <div class="header__contact header__icon-place contacts__socials">
                 <div class="header__contact-title">Соц. сети</div>
                 <div class="header__contact-text">
                     <div class="social__list">
